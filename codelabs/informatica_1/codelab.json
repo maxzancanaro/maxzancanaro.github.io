@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2023-12-14T14:05:18Z",
+  "id": "informatica_1",
+  "duration": 113,
+  "title": "Informatica ed Elementi di Programmazione 1",
+  "authors": "Massimo Zancanaro",
+  "summary": "Appunti per l'insegnamento di Informatica ed Elementi di Programmazione 1 del corso di Laurea Interfacce e Tecnologie della Comunicazione.",
+  "source": "1e3YAxHwOTonYJflVQofv7Z8gJo6pa0OQ8S5cQ0SVoGA",
+  "theme": "web",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "web"
+  ],
+  "tags": [
+    "class"
+  ],
+  "feedback": "https://www.unitn.it",
+  "ga": "UA-52746336-1",
+  "url": "informatica_1"
+}
