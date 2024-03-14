@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2024-03-14T10:22:36Z",
+  "id": "html_e_css_codelab",
+  "duration": 10,
+  "title": "Introduzione ad HTML e CSS",
+  "authors": "Massimo Zancanaro",
+  "summary": "Appunti per l'insegnamento di Informatica ed Elementi di Programmazione 1 del corso di Laurea Interfacce e Tecnologie della Comunicazione.",
+  "source": "1nmM-fWFTEDRruyMeQvwBHV5aXpfNej2_ivS8fDTaapQ",
+  "theme": "web",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "web"
+  ],
+  "tags": [
+    "class"
+  ],
+  "feedback": "https://www.unitn.it",
+  "ga": "UA-52746336-1",
+  "url": "html_e_css_codelab"
+}

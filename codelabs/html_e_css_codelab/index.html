@@ -1,0 +1,102 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Introduzione ad HTML e CSS</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid="UA-52746336-1"
+                  id="html_e_css_codelab"
+                  title="Introduzione ad HTML e CSS"
+                  environment="web"
+                  feedback-link="https://www.unitn.it">
+    
+      <google-codelab-step label="Introduzione" duration="10">
+        <p><strong>Ultimo aggiornamento:</strong> 2024-01-30 </p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Il concetto di markup" duration="0">
+        <p>Un linguaggio di <em>markup </em>è un modo formale e strutturato di annotare un testo per identificare le varie parti al fine di usare queste informazioni per elaborare il testo in modo automatico: di solito (anche se non esclusivamente) per formattare il testo al fine di presentarlo su uno specifico media.  </p>
+<p>La differenza tra i linguaggi di <em>markup </em>e i linguaggi di programmazione è che mentre quest&#39;ultimi sono usati per dare istruzioni per eseguire determinate funzioni, i primi servono per annotare la struttura di un testo al fine di descriverne le parti.</p>
+<p>Oltre allo HTML, che vedremo in seguito, esistono molti altri linguaggi di <em>markup. </em>Ad SGML (<em>Standard Generalized Markup Language</em>), da cui HTML deriva, è stato definito per creare classi di linguaggi di <em>markup</em>, in particolare per annotare strutture di testi letterari a fini di archiviazione e indicizzazione e come passaggio preliminare per analisi bibliografiche. XML (<em>eXtended Markup Language</em>) è una forma semplificata e più strutturata di SGML usata per annotare strutture di dati. Markdown e LaTex vengono usati per definire aspetti specifici di formattazione e sono molto usati in ambito editoriale.</p>
+<p>Un linguaggio di <em>markup </em>consiste in una serie di elementi extra-testuali che vengono inseriti nel testo per annotare (o marcare) gli aspetti che si ritengono rilevanti della struttura. La figura 1 mostra un esempio di annotazione della struttura di una antologia di poesie. Nell&#39;esempio, si suppone che un&#39;antologia (<em>anthology</em>) sia formata da una a più poesie (<em>poem</em>) ognuna delle quali composte da un numero variabile di stanze a loro volta composte da un numero variabile di linee (<em>line</em>).  </p>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\c9a9a28f8acc2c69.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 1. Esempio di testo annotato con SGML (da Sperberg-McQueen &amp; Burnard, 1999; part 1, chapter 2)</em></p>
+</td></tr>
+</table>
+<p>Nei linguaggi definiti da SGML e dai suoi derivati (tra cui HTML), i principali elementi extra-testuali per l&#39;annotazione di chiamano <em>tag </em>e sono costruiti come parole singole (senza spazi) tra parentesi angolari (ad esempio, <em>&lt;stanza&gt;</em>). Ogni <em>tag </em>ha anche una forma finale costruita nello stesso modo ma con una barra dopo la parentesi angolare iniziale (ad esempio <em>&lt;/stanza&gt;</em>). Per annotare una determinata parte di testo con un certo <em>tag</em>, si posiziona il <em>tag </em>di apertura prima dell&#39;inizio del testo e il <em>tag </em>di chiusura alla fine. Una porzione di testo, non può contenere annotazione &#34;incrociate&#34; cioè i tag devono essere chiusi nell&#39;ordine in cui sono stati aperti. La figura 2 mostra alcuni esempi.</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 452.17px" src="img\\2b2069fc46733fb6.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 1. Esempio di testo con due annotazioni in SGML: i tag non vanno mai &#34;incrociati&#34; (in altri termini, ogni tag aperto all&#39;interno di un altro tag va chiuso prima del precedente)</em></p>
+</td></tr>
+</table>
+<p>Non tutti i linguaggi di markup sono basati sulla struttura dei <em>tag</em> ma sia HTML che XML, essendo basati su SGML, usano lo stesso approccio. XML (come anche SGML) è un meta-linguaggio, cioè si usa per definire linguaggi di markup: non esistono <em>tag </em>predefiniti ma viene definita solo l&#39;architettura generale e le regole di composizione dei <em>tag</em>. XML è molto meno complicato di SGML ed è stato pensato per essere più interpretabile e gestibile in modo più efficiente. </p>
+<p>Diversamente, HTML è uno specifico linguaggio, inizialmente definito a partire da SGML e recentemente invece basato su XML (anche se propriamente quest&#39;ultimo si chiama XHTML). Per HTML, l&#39;insieme di <em>tag </em>è definito a priori così come il loro significato.</p>
+<p>Ogni linguaggio di <em>markup </em>definisce formalmente le regole di composizione delle annotazioni all&#39;interno di un testo e ha bisogno di un <em>interprete</em>, cioè di un programma (o una libreria di programmi) per estrarre le annotazioni da uno specifico testo e applicare le operazioni previste. Nel caso di HTML, questo interprete è integrato all&#39;interno di ogni browser internet e le operazioni sono quelle di visualizzare il testo rispettando la sua struttura, cioè usando il tipo di carattere e i colori appropriati per i titoli a diversi livelli, la spaziatura dei caratteri ecc. E di permettere di &#34;navigare&#34; tra le pagine dell&#39;ipertesto seguendo i <em>link </em>ipertestuali definiti (tramite uno specifico <em>tag</em>) all&#39;interno del documento.  </p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="HTML come linguaggio di markup" duration="0">
+        <p>HTML è uno specifico linguaggio di <em>markup </em>per annotare la struttura di ipertesti: la sigla HTML sta per <em>Hyper-Text Markup Language</em>.  È stato <a href="https://home.cern/science/computing/birth-web" target="_blank">definito nel 1989</a> da un tecnico informatico del CERN di Ginevra, <a href="https://www.w3.org/People/Berners-Lee/" target="_blank">Tim Berners-Lee</a>, per facilitare la condivisione di documenti tra gli scienziati del centro di ricerca usando la rete Internet. La definizione dell&#39;HTML e del protocollo di trasmissione dati HTTP (<em>Hyper-Text Transfer Protocol</em>) ha segnato l&#39;inizio del <em>World Wide Web </em>(WWW). </p>
+<p>HTML è uno standard inizialmente mantenuto dal <a href="https://www.w3.org/" target="_blank">World Wide Web Consortium</a> (W3C) e <a href="https://www.w3.org/standards/history/html5/" target="_blank">dal 2018</a>, è gestito da un consorzio di aziende chiamato <a href="https://whatwg.org/policies" target="_blank">WHATWG</a>, a cui partecipano tra gli altri anche Apple e Google. Lo standard è in formato aperto e soggetto a continue migliorie tramite contributi e commenti.</p>
+<p>HTML consiste in un insieme predefinito di <em>tag </em>che in generale sono intesi descrivere la struttura del testo e non come deve essere rappresentata (anche se con qualche eccezione, come vedremo nel seguito). Ogni interprete HTML, decide in modo autonomo in che  modo visualizzare (o rendere in altre modalità) il testo rispettando la sua struttura e anche ottimizzando la resa rispetto al dispositivo o ad altre condizioni. Per esempio, in un cellulare i caratteri da usare dovranno essere necessariamente più piccoli che in uno schermo da computer, oppure per utenti con disabilità visive sarà necessario leggere il testo e rendere la struttura con commenti audio. </p>
+<p>Anche se ogni browser ha delle regole specifiche e predefinite, queste possono essere specificate in modo più dettagliato usando un linguaggio di specifiche (non di <em>markup</em>) chiamato Cascade Style Sheet (CSS) che vedremo sotto. </p>
+<p>Attualmente, l&#39;HTML non è solamente usato per fare ipertesti (cioè le pagine web) ma anche, e forse soprattutto, per definire la struttura grafica delle <em>web app</em> (applicazioni che vengono eseguite all&#39;interno di un browser) e, in certi casi, anche per le interfacce grafiche di altre applicazioni software (cellulari, smartwatch, chioschi, ecc.).</p>
+<p>La versione corrente HTML5 include non solo l&#39;HTML ma anche la definizione del linguaggio di specifiche CSS e il linguaggio di programmazione Javascript che viene usato per modificare la struttura in modo automatico.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="La struttura di base di una &#34;pagina&#34; HTML" duration="0">
+        <h3 is-upgraded><strong>risorse</strong><strong>/template.html</strong></h3>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+  &lt;!-- qui vanno inserite informazioni di meta-livello --&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+  &lt;!-- qui va inserito il testo e le annotazioni di struttura  --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Riferimenti bibliografici" duration="0">
+        <p>Sperberg-McQueen C.M. &amp; Burnard Lu (1999) Guidelines for Electronic Text Encoding and Interchange, <em>TEI P3 Text Encoding Initiative, </em>Chicago, Oxford <a href="https://www.tei-c.org/Vault/GL/P3/index.htm" target="_blank">https://www.tei-c.org/Vault/GL/P3/index.htm</a> (disponibile a Marzo 2024) </p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
