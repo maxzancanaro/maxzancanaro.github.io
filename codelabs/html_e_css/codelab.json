@@ -3,12 +3,12 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2024-03-14T10:38:53Z",
+  "updated": "2024-03-15T10:40:28Z",
   "id": "html_e_css",
-  "duration": 10,
+  "duration": 0,
   "title": "Introduzione ad HTML e CSS",
   "authors": "Massimo Zancanaro",
-  "summary": "Appunti per l'insegnamento di Informatica ed Elementi di Programmazione 1 del corso di Laurea Interfacce e Tecnologie della Comunicazione.",
+  "summary": "Appunti per l'insegnamento di Informatica ed Elementi di Programmazione 1 del corso di Laurea Interfacce e Tecnologie della Comunicazione - modulo HTML e CSS",
   "source": "1nmM-fWFTEDRruyMeQvwBHV5aXpfNej2_ivS8fDTaapQ",
   "theme": "web",
   "status": [
@@ -20,7 +20,6 @@
   "tags": [
     "class"
   ],
-  "feedback": "https://www.unitn.it",
-  "ga": "UA-52746336-1",
+  "feedback": "https://docs.google.com/forms/d/e/1FAIpQLSfpCnO5qYYdaCOahBPKFTTpE8tm3D-9NOmWuq4qQGZe20YXaA/viewform",
   "url": "html_e_css"
 }
