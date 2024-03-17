@@ -155,6 +155,7 @@
 <p><em>&lt;meta http-equiv=&#34;Pragma&#34; content=&#34;no-cache&#34;&gt;</em></p>
 <p><em>&lt;meta http-equiv=&#34;Expires&#34; content=&#34;0&#34;&gt;</em></p>
 <p>È bene poi ricordarsi di eliminarle, una volta che la revisione del documento è stata conclusa.</p>
+<p>(NB. In Chrome, Firefox e Edge, si può anche evitare il <em>caching </em>ricaricando la pagina mentre si tiene premuto il tasto CTRL)</p>
 </aside>
 <p>Nella sezione <em>head</em>, vengono anche definiti gli stili sia interni che esterni al documento che gli <em>script </em>in Javascript, anche questi possono essere interni o esterni al documento. Entrambi questi aspetti saranno discussi più approfonditamente nei capitoli seguenti.</p>
 <p>Per una specifica completa si può vedere la <a href="https://html.spec.whatwg.org/#metadata-content" target="_blank">sezione 3.2.5.2.1</a> del Living Standard)</p>
@@ -164,9 +165,20 @@
     
       <google-codelab-step label="La sezione body (e i tag più usati)" duration="0">
         <p>La sezione <em>body</em>, racchiusa tra i <em>tag `&lt;body&gt;` </em>e <em>`&lt;/body&gt;` </em>comprende il documento annotato. La maggior parte dei <em>tag </em>HTML si applica in questa sezione. In questo capitolo vedremo i tag di formattazione (<em>formatting</em>) e di impaginazione (<em>layout</em>). Alcuni aspetti più avanzati che richiedono combinazioni di <em>tag </em>per fare liste, tabelle, e mappa cliccabili) saranno trattati nei capitoli successivi.</p>
+<h2 is-upgraded><strong>Visualizzazione del body e caratteri speciali</strong></h2>
+<p>In generale, il testo che si trova nella sezione <em>body</em> viene semplicemente visualizzato usando il carattere predefinito (questo può comunque essere modificato usando CSS, come vedremo). In generale, indipendentemente da come il testo viene scritto nel file, viene poi visualizzato come una singola linea con spaziature appropriate tra le parole e una divisione in righe che dipende dalla grandezza della finestra di visualizzazione (si veda figura 6.1).</p>
+<p>In generale, il testo dei file HTML è scritto in caratteri normali (nel charset definito dal campo <em>meta </em>charset, altrimenti non viene visualizzato bene: questo è particolarmente importante per alfabeti non latini o, a volte, anche per le lettere accentate in italiano). È però importante notare che alcuni caratteri non si possono scrivere: in particolare le parentesi angolari vengono interpretate come l&#39;inizio o la chiusura di un tag e se usate come caratteri del documento creano confusione al browser. In modo simile, gli spazi vuoti vengono ignorati dal browser. Per visualizzare in modo appropriato parentesi angolari e spazi vuoti si usano le cosiddette <em>character entities</em>: sono codici che iniziano con un simbolo `&amp;` e terminano con un punto e virgola, e racchiudono una parola che indica il carattere da visualizzare. Le  <em>character entities </em>fondamentali da ricordare sono: `&amp;lt;` per visualizzare (sta per <em>less than</em>) `&lt;` , `&amp;gt;` per visualizzare `&gt;` (sta per <em>greater than</em>) e `&amp;nbsp;` per uno spazio (sta per <em>non-breaking space</em>, si chiama così perché è utile per inserire forzatamente uno spazio tra due parole impedendo quindi che vengano separate da un&#39;interruzione di riga). Ovviamente, anche il carattere `&amp;` è un carattere vietato, in quanto segnala una <em>character entity</em> e per inserirlo si usa il `&amp;amp;`</p>
+<p>Le <em>character entities </em>si usano anche per visualizzare caratteri non standard o caratteri al di fuori del charset utilizzato. L&#39;elenco completo si può trovare ad esempio nella pagina di Wikipedia <a href="https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references" target="_blank">List of XML and HTML character entity references</a>.</p>
+<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/html_file_to_document.html" target="_blank"><strong>risorse/html_file_to_document.html</strong></a></h3>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\bd5db91359aee727.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 6.1 Dal file HTML al documento HTML (da notare l&#39;uso di character entities)</em></p>
+</td></tr>
+</table>
 <h2 is-upgraded><strong>Tag di formattazione</strong></h2>
 <p>I tag di formattazione (<em>formatting</em>) di porzioni di testo si dividono in due categorie: quelli che indicano in modo specifico quale formattazione applicare (grassetto, italico, ecc.) e quelli che indicano la funzione logica che si vuole ottenere (enfasi, cancellazione, ecc.). Nelle prime versioni di HTML, erano presenti solo i primi in quanto la funzione principale era la visualizzazione di un documento. </p>
-<p>Oggi si preferisce usare la formattazione logica perché un documento potrebbe essere reso in modalità diverse (audiolettura, o visualizzazione su formati diversi). Ad esempio, la porzione di testo `questo testo è&lt;b&gt;importante&lt;/b&gt;` viene visualizzato mettendo in grassetto la parola &#34;importante&#34;: &#34;questo testo è <strong>importante</strong>&#34;. Usando il tag `&lt;strong&gt;` invece che `&lt;b&gt;`, si ottiene lo stesso risultato ma si rende più esplicito il significato comunicativo che si vuole dare alla parola. Un interprete potrebbe quindi meglio rappresentare questo significato laddove il grassetto non possa essere usato (come nel caso di una audiolettura dove andrebbe stressata la voce sulla parola per rendere l&#39;importanza), oppure possa non essere efficace (ad esempio, nei tipi di carattere usato per facilitare la lettura alle persone dislessica, il grassetto non è reso bene perché i caratteri sono già molto spessi, in questo caso, il browser potrebbe sottolineare la parola o visualizzare più grande).</p>
+<p>Oggi si preferisce usare la formattazione logica perché un documento potrebbe essere reso in modalità diverse (audiolettura, o visualizzazione su formati diversi). Ad esempio, la porzione di testo HTML <em>`questo testo è &lt;b&gt;importante&lt;/b&gt;`</em> viene visualizzato mettendo in grassetto la parola &#34;importante&#34;: &#34;questo testo è <strong>importante</strong>&#34;. Usando il tag `&lt;strong&gt;` invece che `&lt;b&gt;`, si ottiene lo stesso risultato ma si rende più esplicito il significato comunicativo che si vuole dare alla parola. Un interprete potrebbe quindi meglio rappresentare questo significato laddove il grassetto non possa essere usato (come nel caso di una audiolettura dove andrebbe stressata la voce sulla parola per rendere l&#39;importanza), oppure possa non essere efficace (ad esempio, nei tipi di carattere usato per facilitare la lettura alle persone con dislessia, il grassetto non è reso bene perché i caratteri sono già molto spessi, in questo caso, il browser potrebbe sottolineare la parola o visualizzarla più grande).</p>
 <p>Inoltre, come vedremo in seguito, le formattazioni specifiche si possono fare in modo più efficiente usando CSS. Per questo motivo, diversi <em>tag </em>di questa categoria, anche se non tutti, sono &#34;deprecati&#34; (<em>deprecated</em>) in HTML5: significa che sono ancora utilizzabili ma se ne sconsiglia l&#39;uso perché nelle successive versioni potrebbero essere eliminati e quindi rendere il documento non più visualizzabile sui nuovi browser.</p>
 <p><strong>Elenco dei tag di formattazione specifica: </strong></p>
 <p><strong>`&lt;b&gt; ... &lt;/b&gt;`</strong>: visualizza il testo in grassetto; </p>
@@ -183,31 +195,75 @@
 <p><strong> `&lt;cite&gt;  ... &lt;/cite&gt;`:  </strong>serve per riportare citazioni, di solito il testo viene scritto in italico;</p>
 <p><strong>`&lt;code&gt; ... &lt;/code&gt;`:  </strong>il testo annotato viene visualizzato come fosse un pezzo di codice scritto in un linguaggio di programmazione (attenzione: non significa che il codice venga eseguito davvero); di solito viene usato un carattere di tipo <em>monospace</em>;</p>
 <p><strong>`&lt;kbd&gt; ... &lt;/kbd&gt;` </strong>: il testo viene riportato in un formato che dovrebbe rende evidente che si tratta di un input da tastiera, anche in questo caso viene di solito usato un carattere <em>monospace</em>;</p>
+<p>Un tag molto importante, come vedremo in seguito, è  <strong>`&lt;span&gt;` </strong>che è stato introdotto per denotare generiche porzioni di testo. Un&#39;annotazione con questo <em>tag </em>non viene visualizzata in nessun modo particolare e il testo appare esattamente uguale a quando non la si usa. La differenza è che usando questo tag, si potranno poi in CSS definire formattazioni specifiche su specifiche porzioni di testi all&#39;interno di un blocco (e quindi, si potranno ridefinire tutti i tag di formattazione visti sopra).</p>
 <h2 is-upgraded>Tag di impaginazione</h2>
 <p>I <em>tag </em>di impaginazione (<em>layout</em>) dei paragrafi includono un gruppo di <em>tag</em> per annotare e visualizzare i titoli, un gruppo di <em>tag </em>per denotare i blocchi di testi, tra cui i paragrafi e infine dei tag per definire layout particolari.</p>
-<p>I <em>tag</em> per annotare e visualizzare i titoli di diverso livello sono <strong>`&lt;h1&gt;`</strong>,<strong> `&lt;h2&gt;`</strong>, e così via fino ad <strong>`&lt;h6&gt;`</strong>. I vari browser determinano per ognuno quale tipo di carattere, formato, grandezza e colore utilizzare (si veda figura 6.1). Queste proprietà sono comunque definibili usando CSS. </p>
-<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/43714eea65f60309101d636113baa691a5e0bc83/risorse/template.html" target="_blank"><strong>risorse/headings.html</strong></a></h3>
+<p>I <em>tag</em> per annotare e visualizzare i titoli di diverso livello sono <strong>`&lt;h1&gt;`</strong>,<strong> `&lt;h2&gt;`</strong>, e così via fino ad <strong>`&lt;h6&gt;`</strong>. I vari browser determinano per ognuno quale tipo di carattere, formato, grandezza e colore utilizzare (si veda figura 6.1). Queste proprietà sono comunque personalizzabili usando CSS. </p>
+<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/headings.html" target="_blank"><strong>risorse/headings.html</strong></a></h3>
 <table>
 <tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\cf35cca5d864cdad.png"></p>
 </td></tr>
-<tr><td colspan="1" rowspan="1"><p><em>Figura 6.1 Visualizzazione in Chrome dei 6 livelli di titolo (heading) in HTML</em></p>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 6.2 Visualizzazione in Chrome dei 6 livelli di titolo (heading) in HTML</em></p>
 </td></tr>
 </table>
 <p><strong>Blocchi e paragrafi</strong></p>
-<p>Nell&#39;HTML originario, era stato introdotto il <em>tag </em><strong>`&lt;p&gt;` </strong>per denotare porzioni di testo che rappresentano un paragrafo. Il testo all&#39;interno di un paragrafo è rappresentato come una unica linea, indipendentemente da come viene scritto nel file e il browser si occupa di andare a capo quando necessario, dipendentemente dalla larghezza della finestra. Inoltre vengono aggiunte delle spaziature consone prima e dopo ogni paragrafo (figura 6.2).</p>
+<p>Nell&#39;HTML originario, era stata introdotta l&#39;annotazione <strong>`&lt;p&gt;...&lt;/p&gt;` </strong>per denotare porzioni di testo che rappresentano un paragrafo. Il testo all&#39;interno di un paragrafo è rappresentato come una unica linea, indipendentemente da come viene scritto nel file e il browser si occupa di andare a capo quando necessario, dipendentemente dalla larghezza della finestra. Inoltre vengono aggiunte delle spaziature appropriate prima e dopo ogni paragrafo (figura 6.3).</p>
+<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/headings.html" target="_blank"><strong>risorse/paragrafi.html</strong></a></h3>
 <table>
 <tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 592.42px" src="img\\4db13fe495ba0ce6.png"></p>
 </td></tr>
-<tr><td colspan="1" rowspan="1"><p><em>Figura 6.2 Gestione automatica dei paragrafi (tag `&lt;p&gt;...&lt;/p&gt;` in HTML</em></p>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 6.3 Gestione automatica dei paragrafi (tag `&lt;p&gt;...&lt;/p&gt;` in HTML</em></p>
 </td></tr>
 </table>
-<p>Benché ancora molto usato per annotare documenti, il tag `&lt;p&gt;` è poco versatile perché impone una formattazione difficile poi da gestire in modo autonomo (come vedremo CSS).</p>
-<p><strong>`&lt;div&gt;`  </strong></p>
-<p><strong>`&lt;span&gt;`  </strong></p>
-<p><strong>`&lt;pre&gt;`</strong></p>
-<p><strong>`&lt;blockquote&gt;`  </strong></p>
-<p><strong>`&lt;br&gt;` o `&lt;/br&gt;</strong></p>
-<p><strong>`&lt;hr&gt;` o `&lt;/hr&gt;</strong></p>
+<p>Benché ancora molto usato per annotare documenti, il tag `&lt;p&gt;` è poco versatile perché impone una formattazione difficile poi da gestire in modo personalizzato (come vedremo più avanti). Nelle nuove versioni di HTML, è stata introdotta l&#39;annotazione <strong>`&lt;div&gt;...&lt;/div&gt;`</strong> per rappresentare generici blocchi all&#39;interno di un documento. La rappresentazione visuale standard delle porzioni `&lt;div&gt;` è simile a quella per `&lt;p&gt;&#39; con la differenza che i blocchi di testo non vengono tra loro separati (si veda figura 6.4). Nell&#39;usare il <em>tag </em>‘&lt;div&gt;&#39; si potrà poi gestire la spaziatura, l&#39;indentazione o altre proprietà di impaginazione usando CSS.</p>
+<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/blocchi_vs_paragrafi.html" target="_blank"><strong>risorse/blocchi _vs_ paragrafi.html</strong></a></h3>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\3c5daffa93fe3644.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 6.4 Differenza tra il tag `&lt;p&gt;` e il tag `&lt;div&gt;`</em></p>
+</td></tr>
+</table>
+<p>Il tag <strong>`&lt;pre&gt;` </strong>è un altro modo di annotare blocchi di testo, funziona come il `&lt;div&gt;` in quanto non aggiunge spaziatura ma, a differenza di quello, non mette neppure il testo sulla stessa riga e lo lascia con le spaziatura del testo che si trova nel file. </p>
+<p>Infine, <strong>`&lt;blockquote&gt;` </strong> si usa per fare una citazione, cioè per riportare un pezzo di testo preso da un&#39;altra fonte (attenzione alla differenza con `&lt;cite&gt;`, in Italiano la parola citazione copre entrambi i significati ma in Inglese sono diversi). Viene di solito visualizzato con caratteri italici e l&#39;intero paragrafo indentato a destra.</p>
+<h2 is-upgraded><strong>Altri tag di formattazione</strong></h2>
+<p>Due <em>tag</em> di tipo <em>self-closing</em> spesso usati che assomigliano più a direttive che ad annotazioni, ma sono comunque molto utili, sono  <strong>`&lt;br&gt;` </strong>(o<strong> `&lt;/br&gt;`</strong>) che interrompe una riga andando a capo e  <strong>`&lt;hr&gt;` </strong>(o <strong>`&lt;/hr&gt;`</strong>) che inserisce una linea divisoria orizzontale.</p>
+<h2 is-upgraded><strong>Il tag ipertestuale</strong></h2>
+<p>Infine, il <em>tag </em>più importante, almeno dal punto di vista simbolico, è quello che permette di collegare diversi documenti (o, diverse parti di un documento) per realizzare un ipertesto. Un ipertesto, tecnicamente equivale ad un documento la cui struttura non è lineare ma ha la forma di un grafo (figura 6.5).</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 348.50px" src="img\\e0b1df4f393cde58.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 6.5 Una delle prime rappresentazioni del concetto di ipertesto (da Conklin, 1987)</em></p>
+</td></tr>
+</table>
+<p>A differenza di altri linguaggi per definire ipertesti, HTML è stato tenuto volutamente molto semplice. L&#39;unico modo per definire strutture ipertestuali è usare il <em>tag </em>è <strong>`&lt;a&gt; ...&lt;/a&gt;` </strong>che sta per <em>anchor</em>, ossia la porzione di testo a cui si connette (o, appunto, si &#34;àncora&#34;) il collegamento (<em>link</em>). I collegamenti possono essere esterni (ad altri documenti o pagine) oppure  interni verso altre porzioni dello stesso documento. </p>
+<p>La destinazione del collegamento viene specificata con l&#39;attributo <em>href</em>.  Se il valore di questo attributo è un nome di un file, questo viene aperto, se invece è un URL viene caricato via internet. Per fare un collegamento interno, viene invece indicato un codice identificativo prefisso dal carattere #. Lo stesso codice deve essere poi indicato in un qualunque <em>tag </em>dello stesso documento usando l&#39;attributo <em>id</em>.</p>
+<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/hypertext_01.html" target="_blank"><strong>risorse/hypertext_01.html</strong></a> <a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/hypertext_02.html" target="_blank"><strong>risorse/hypertext_02.html</strong></a></h3>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\f6bf1036646e8157.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 6.2 Uso di collegamenti ipertestuali esterni ed interni con il tag `&lt;a&gt;` </em></p>
+</td></tr>
+</table>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="I nuovi tag HTML5" duration="0">
+        <p>Come forse appare evidente dalle spiegazioni precedenti, il linguaggio HTML si è andato evolvendo da un linguaggio con uno specifico obiettivo di visualizzare un testo formattato su uno schermo ad un linguaggio per annotare la struttura logica di testi. Lo si vede dalla distinzione tra i diversi tipi tag di formattazione (enfasi e citazione sono entrambi realizzati con l&#39;italico ma specificare l&#39;uso dell&#39;italico fa perdere la distinzione logica tra questi due usi), dall&#39;introduzione di un tag generico `&lt;span&gt;` per porzioni di testo,  e anche dalla necessità di avere un tag generico per annotare un blocco di testo rispetto allo specifico paragrafo. Questa evoluzione è sempre più marcata a partire dall&#39;introduzione del linguaggio di specifiche CSS (con HTML4).</p>
+<p>Nella versione attuale, HTML5, questo aspetto si è ulteriormente evoluto, anche in considerazione che il web non è più un insieme di documenti ma vengono sempre più spesso realizzate vere e proprie interfacce grafiche all&#39;interno di un browser. HTML5 ha quindi introdotto nuovi tag che rappresentano strutture più ad alto livello di un documento, tra cui:</p>
+<p><em>`&lt;header&gt;` </em>definisce l&#39;intestazione di un documento (da non confondersi comunque con la sezione `&lt;head&gt;` del documento HTML);</p>
+<p><em>`&lt;nav&gt;`</em> definisce la sezione di navigazione;</p>
+<p><em>`&lt;article&gt;`</em> rappresenta un pezzo di contenuto indipendente che può essere spostato e riutilizzato in diverse parti del documento;</p>
+<p><em>`&lt;section&gt;`</em> definisce una sezione di un documento, che in genere include un `&lt;header&gt;` specifico</p>
+<p><em>`&lt;aside&gt;`</em> rappresenta del contenuto che è collegato ma separato dal resto, come ad esempio un barra laterale o un menu contestuale;</p>
+<p><em>`&lt;footer&gt;`</em> rappresenta il piè di pagina;</p>
+<p><em>`&lt;main&gt;`</em> definisce l&#39;area principale del documento in cui di solito si mettono le varie `&lt;section&gt;` </p>
+<p><em>`&lt;figure&gt;`</em> rappresenta una sezione indipendente per figure e tabelle (da non confondere con i tag per inserire figure e tabelle che vedremo nei prossimi capitoli).</p>
+<p><em>`&lt;figcaption&gt;`</em> rappresenta la legenda di una  `&lt;figure&gt;`</p>
+<p><em>`&lt;details&gt;`</em> definisce una porzione di documento che fornisce informazioni aggiuntive (di solito che viene nascosta e mostrata a seconda delle esigenze)</p>
+<p><em>`&lt;summary&gt;`</em> simile a `&lt;details&gt;`, definisce un riassunto di un determinato contenuto;</p>
+<p>Per nessuno di questi è però prevista alcuna specifica realizzazione visuale (esattamente, come per <em>`&lt;span&gt;&#39;</em>) perché questo aspetto viene gestire in modo separato nei CSS. </p>
+<p>Come si può notare, i nuovi <em>tag </em>riprendono nei loro nomi (e nella loro definizione) i concetti di base dell&#39;editoria,  infatti l&#39;obiettivo è di raggiungere la completa separazione tra la struttura logica di un documento (demandata alla linguaggio di markup HTML) e la sua rappresentazione in un determinato media (demandata alle specifiche CSS).</p>
 
 
       </google-codelab-step>
@@ -223,8 +279,12 @@
       </google-codelab-step>
     
       <google-codelab-step label="Riferimenti" duration="0">
-        <p>Sperberg-McQueen C.M. &amp; Burnard Lu (1999) Guidelines for Electronic Text Encoding and Interchange, <em>TEI P3 Text Encoding Initiative, </em>Chicago, Oxford <a href="https://www.tei-c.org/Vault/GL/P3/index.htm" target="_blank">https://www.tei-c.org/Vault/GL/P3/index.htm</a> (disponibile a Marzo 2024) </p>
+        <p>Conklin, Jeff (1987). Hypertext: An Introduction and Survey. Computer, 20(9), 17–41. <a href="https://doi.org/10.1109/MC.1987.1663693" target="_blank">https://doi.org/10.1109/MC.1987.1663693</a> </p>
+<p>Sperberg-McQueen C.M. &amp; Burnard Lu (1999) Guidelines for Electronic Text Encoding and Interchange, <em>TEI P3 Text Encoding Initiative, </em>Chicago, Oxford <a href="https://www.tei-c.org/Vault/GL/P3/index.htm" target="_blank">https://www.tei-c.org/Vault/GL/P3/index.htm</a> (disponibile a Marzo 2024) </p>
 <p>WHATWG, HTML Living Standard <a href="https://html.spec.whatwg.org/" target="_blank">https://html.spec.whatwg.org/</a> (disponibile a Marzo 2024) </p>
+<p>W3School HTML Reference <a href="https://www.w3schools.com/tags/" target="_blank">https://www.w3schools.com/tags/</a> (disponibile a Marzo 2024)</p>
+<p>The Valley of Code <a href="https://thevalleyofcode.com/" target="_blank">https://thevalleyofcode.com/</a> (disponibile a Marzo 2024)</p>
+<p>Wikipedia <a href="https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references" target="_blank">List of XML and HTML character entity references</a> (disponibile a Marzo 2024)</p>
 
 
       </google-codelab-step>
