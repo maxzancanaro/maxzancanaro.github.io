@@ -123,8 +123,7 @@
         <p>La sezione <em>head</em> (quella compresa tra i tag `<em>&lt;head&gt;` </em>e `<em>&lt;/head&gt;`</em>) dovrebbe essere necessariamente innestata all&#39;interno della sezione <em>html </em>e prima della sezione <em>body</em>. I browser moderni sono in generale abbastanza flessibili da riconoscere queste due sezioni comunque siano disposte nel documento ma è possibile che alcune parti vengano interpretate in modo diverso dai diversi browser o che alcuni <em>tag </em>interni non vengano poi riconosciuti. </p>
 <h2 is-upgraded>La struttura della sezione <strong><em>head</em></strong></h2>
 <p>All&#39;interno della sezione <em>head </em>si possono inserire solo alcuni <em>tag </em>specifici e in generale non si mette testo.</p>
-<aside class="special"><p><strong>Nota: </strong> la maggior parte dei browser visualizza un eventuale testo nella sezione <em>head </em>come fosse inserito prima della sezione <em>body </em>ma questo crea problemi nel caso si voglia accedere alla struttura del documento usando Javascript, come spiegato in seguito). </p>
-</aside>
+<p><strong>Attenzione: </strong> la maggior parte dei browser visualizza un eventuale testo nella sezione <em>head </em>come fosse inserito prima della sezione <em>body </em>ma questo crea problemi nel caso si voglia accedere alla struttura del documento usando Javascript, come spiegato in seguito). </p>
 <p>I <em>tag </em>principali che compaiono nella sezione <em>head</em> sono i seguenti:</p>
 <p><strong>`&lt;title&gt;`</strong> definisce il titolo del documento. Attenzione alla differenza tra il titolo di un documento (che viene di solito visualizzato nella barra del browser o del tab in cui il documento viene aperto) e le intestazioni (a volte genericamente chiamate titoli) che si trovano nel <em>body </em>e vengono visualizzate nella pagine (si veda il capitolo seguente).</p>
 <table>
@@ -133,34 +132,82 @@
 <tr><td colspan="1" rowspan="1"><p><em>Figura 5.1 Esempio di documento  HTML senza nessuna formattazione ma con un head che contiene il titolo (attenzione a notare dove il titolo viene visualizzato!)</em></p>
 </td></tr>
 </table>
-<p><strong>`&lt;meta&gt;`</strong> viene usato per inserire informazioni di meta-livello, utili sia per visualizzare il documento (ad esempio quale gruppo di caratteri utilizzare) che per archiviare i documenti HTML in database (come la specificazione dell&#39;autore o dell&#39;autrice) e per indicizzare il contenuto sui motori di ricerca. Gli attributi più usati sono riportati nella figura 5.2. L&#39;attributo charset serve per definire lo specifico gruppo di caratteri (in particolare, se si usano caratteri non latini). L&#39;attributo viewport seleziona la dimensione del display uguale a quella del dispositivo: in questo modo le pagine vengono visualizzate nel modo più appropriato (per usi molti particolari e avanzati, è necessario modificare questa impostazione che comunque andrebbe sempre specificata). L&#39;attributo meta è più generico e richiede sempre di specificare anche l&#39;attributo content: il primo definisce la categoria (ad esempio, author o keyword e il secondo specifica i valori della categoria). L&#39;attributo meta è usato per archiviare e indicizzare le pagine web. Per una specifica completa si veda la <a href="https://html.spec.whatwg.org/#metadata-content" target="_blank">sezione 3.2.5.2.1</a> del Living Standard)</p>
+<p><strong>`&lt;meta&gt;`</strong> viene usato per inserire direttive di meta-livello, utili sia per visualizzare il documento (ad esempio quale gruppo di caratteri utilizzare) che per archiviare i documenti HTML in database (come la specificazione dell&#39;autore o dell&#39;autrice) e per indicizzare il contenuto sui motori di ricerca. Gli attributi più usati sono riportati nella figura 5.2. L&#39;attributo <em>charset </em>serve per definire lo specifico gruppo di caratteri (in particolare, se si usano caratteri non latini). L&#39;attributo <em>viewport </em>seleziona la dimensione del display uguale a quella del dispositivo: in questo modo le pagine vengono visualizzate nel modo più appropriato (per usi molti particolari e avanzati, è necessario modificare questa impostazione che comunque andrebbe sempre specificata). L&#39;attributo <em>meta </em>è più generico e richiede sempre di specificare anche l&#39;attributo content: il primo definisce la categoria (ad esempio, author o keyword e il secondo specifica i valori della categoria). </p>
+<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/43714eea65f60309101d636113baa691a5e0bc83/risorse/template.html" target="_blank"><strong>risorse/template_fullhead.html</strong></a></h3>
 <pre><code>&lt;head&gt;
+  &lt;title&gt;Template&lt;/title&gt;                
+        
+  &lt;meta name=&#34;description&#34; content=&#34;full head template&#34;&gt;
+  &lt;meta name=&#34;keywords&#34; content=&#34;HTML, learning&#34;&gt;
+  &lt;meta name=&#34;author&#34; content=&#34;Massimo Zancanaro&#34;&gt;
+        
   &lt;meta charset=&#34;UTF-8&#34;&gt;
   &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;
-  &lt;meta name=&#34;description&#34; content=&#34;Free Web tutorials&#34;&gt;
-  &lt;meta name=&#34;keywords&#34; content=&#34;HTML, CSS, JavaScript&#34;&gt;
-  &lt;meta name=&#34;author&#34; content=&#34;John Doe&#34;&gt;
+
+  &lt;meta http-equiv=&#34;Cache-Control&#34; content=&#34;no-cache, no-store, must-revalidate&#34;&gt;
+  &lt;meta http-equiv=&#34;Pragma&#34; content=&#34;no-cache&#34;&gt;
+  &lt;meta http-equiv=&#34;Expires&#34; content=&#34;0&#34;&gt;
+
  &lt;/head&gt;</code></pre>
 <p><em>Figura 5.2 Struttura di base di un documento HTML</em></p>
+<aside class="warning"><p><strong>Consiglio:</strong> Una serie di direttive <em>meta </em>molto utili quando si preparano documenti HTML sono quelle per evitare che il browser utilizzi la <em>cache</em>, cioè il meccanismo di memoria interna che evita di ricaricare la pagina in certe condizioni. Mentre questa tecnica è molto utile, per velocizzare la visualizzazione del sito, mentre si sta modificando e provando il codice HTML, è più utile che il browser carichi sempre il documento. Per evitare la cache si inseriscono nella sezione head le seguenti direttive <em>meta</em>:</p>
+<p><em>&lt;meta http-equiv=&#34;Cache-Control&#34; content=&#34;no-cache, no-store, must-revalidate&#34;&gt;</em></p>
+<p><em>&lt;meta http-equiv=&#34;Pragma&#34; content=&#34;no-cache&#34;&gt;</em></p>
+<p><em>&lt;meta http-equiv=&#34;Expires&#34; content=&#34;0&#34;&gt;</em></p>
+<p>È bene poi ricordarsi di eliminarle, una volta che la revisione del documento è stata conclusa.</p>
+</aside>
 <p>Nella sezione <em>head</em>, vengono anche definiti gli stili sia interni che esterni al documento che gli <em>script </em>in Javascript, anche questi possono essere interni o esterni al documento. Entrambi questi aspetti saranno discussi più approfonditamente nei capitoli seguenti.</p>
+<p>Per una specifica completa si può vedere la <a href="https://html.spec.whatwg.org/#metadata-content" target="_blank">sezione 3.2.5.2.1</a> del Living Standard)</p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="La sezione body (e i tag più usati)" duration="0">
-        <p>La sezione <em>body</em>, racchiusa tra i <em>tag `&lt;body&gt;` </em>e <em>`&lt;/body&gt;` </em>comprende il documento annotato. La maggior parte dei <em>tag </em>HTML si applica in questa sezione.</p>
-<p>I tag di formattazione (<em>formatting</em>) di porzioni di testo.</p>
-<p><strong>`&lt;b&gt;`, `&lt;i&gt;`, `&lt;s&gt;`</strong></p>
-<p><strong>`&lt;small&gt;`, `&lt;sub&gt;`, `&lt;sup&gt;`</strong></p>
-<p><strong>` &lt;strong&gt;`, `&lt;em&gt;`, `&lt;cite&gt;`,`&lt;code&gt;`, `&lt;del&gt;` e ` &lt;ins&gt;`, `&lt;kbd&gt;` , `&lt;mark&gt;`</strong></p>
-<p>I tag di impaginazione (<em>layout</em>) dei paragrafi.</p>
-<p><strong>`&lt;br&gt;`</strong></p>
-<p><strong>`&lt;hr&gt;`</strong></p>
-<p><strong>`&lt;pre&gt;`</strong></p>
-<p><strong>`&lt;p&gt;` </strong></p>
-<p><strong>`&lt;blockquote&gt;`  </strong></p>
+        <p>La sezione <em>body</em>, racchiusa tra i <em>tag `&lt;body&gt;` </em>e <em>`&lt;/body&gt;` </em>comprende il documento annotato. La maggior parte dei <em>tag </em>HTML si applica in questa sezione. In questo capitolo vedremo i tag di formattazione (<em>formatting</em>) e di impaginazione (<em>layout</em>). Alcuni aspetti più avanzati che richiedono combinazioni di <em>tag </em>per fare liste, tabelle, e mappa cliccabili) saranno trattati nei capitoli successivi.</p>
+<h2 is-upgraded><strong>Tag di formattazione</strong></h2>
+<p>I tag di formattazione (<em>formatting</em>) di porzioni di testo si dividono in due categorie: quelli che indicano in modo specifico quale formattazione applicare (grassetto, italico, ecc.) e quelli che indicano la funzione logica che si vuole ottenere (enfasi, cancellazione, ecc.). Nelle prime versioni di HTML, erano presenti solo i primi in quanto la funzione principale era la visualizzazione di un documento. </p>
+<p>Oggi si preferisce usare la formattazione logica perché un documento potrebbe essere reso in modalità diverse (audiolettura, o visualizzazione su formati diversi). Ad esempio, la porzione di testo `questo testo è&lt;b&gt;importante&lt;/b&gt;` viene visualizzato mettendo in grassetto la parola &#34;importante&#34;: &#34;questo testo è <strong>importante</strong>&#34;. Usando il tag `&lt;strong&gt;` invece che `&lt;b&gt;`, si ottiene lo stesso risultato ma si rende più esplicito il significato comunicativo che si vuole dare alla parola. Un interprete potrebbe quindi meglio rappresentare questo significato laddove il grassetto non possa essere usato (come nel caso di una audiolettura dove andrebbe stressata la voce sulla parola per rendere l&#39;importanza), oppure possa non essere efficace (ad esempio, nei tipi di carattere usato per facilitare la lettura alle persone dislessica, il grassetto non è reso bene perché i caratteri sono già molto spessi, in questo caso, il browser potrebbe sottolineare la parola o visualizzare più grande).</p>
+<p>Inoltre, come vedremo in seguito, le formattazioni specifiche si possono fare in modo più efficiente usando CSS. Per questo motivo, diversi <em>tag </em>di questa categoria, anche se non tutti, sono &#34;deprecati&#34; (<em>deprecated</em>) in HTML5: significa che sono ancora utilizzabili ma se ne sconsiglia l&#39;uso perché nelle successive versioni potrebbero essere eliminati e quindi rendere il documento non più visualizzabile sui nuovi browser.</p>
+<p><strong>Elenco dei tag di formattazione specifica: </strong></p>
+<p><strong>`&lt;b&gt; ... &lt;/b&gt;`</strong>: visualizza il testo in grassetto; </p>
+<p><strong>`&lt;i&gt; ... &lt;/i&gt;`</strong>: visualizza il testo in italico;</p>
+<p><strong>`&lt;u&gt; ... &lt;/u&gt;`</strong>:testo viene visualizzato con una sottolineatura;</p>
+<p><strong>`&lt;s&gt; ... &lt;/s&gt;` e `&lt;strike&gt; ... &lt;/strike&gt;`</strong>: il testo annotato viene visualizzato come barrato (in HTML5, entrambi i <em>tag </em>sono deprecati). </p>
+<p><strong>`&lt;small&gt; ... &lt;/small&gt;` </strong>: il testo annotato viene visualizzato con caratteri di dimensioni più piccole rispetto al resto del documento; </p>
+<p><strong>`&lt;sub&gt; ... &lt;/sub&gt;` </strong>e<strong> `&lt;sup&gt; ... &lt;/sup&gt;`</strong>: il testo viene visualizzato come pedice o apice, rispettivamente. </p>
+<p><strong>Elenco dei tag di formattazione logica: </strong></p>
+<p><strong>` &lt;strong&gt; ... &lt;/strong&gt;`: </strong>visualizza il testo in formato più accentuato, di solito viene usato il grassetto;</p>
+<p><strong> `&lt;em&gt; ... &lt;/em&gt;`</strong>: visualizza il testo dando maggiore enfasi, di solito viene usato l&#39;italico;</p>
+<p><strong> `&lt;del&gt; ... &lt;/del&gt;` e ` &lt;ins&gt; ... &lt;/ins&gt;` </strong>: indicano rispettivamente un testo da cancellare, di solito viene visualizzato come testo barrato, e come testo da aggiungere, di solito visualizzato come sottolineato;  </p>
+<p><strong>`&lt;mark&gt; ... &lt;/mark&gt;`</strong>: il testo viene evidenziato, di solito viene usato un colore di sfondo giallo; </p>
+<p><strong> `&lt;cite&gt;  ... &lt;/cite&gt;`:  </strong>serve per riportare citazioni, di solito il testo viene scritto in italico;</p>
+<p><strong>`&lt;code&gt; ... &lt;/code&gt;`:  </strong>il testo annotato viene visualizzato come fosse un pezzo di codice scritto in un linguaggio di programmazione (attenzione: non significa che il codice venga eseguito davvero); di solito viene usato un carattere di tipo <em>monospace</em>;</p>
+<p><strong>`&lt;kbd&gt; ... &lt;/kbd&gt;` </strong>: il testo viene riportato in un formato che dovrebbe rende evidente che si tratta di un input da tastiera, anche in questo caso viene di solito usato un carattere <em>monospace</em>;</p>
+<h2 is-upgraded>Tag di impaginazione</h2>
+<p>I <em>tag </em>di impaginazione (<em>layout</em>) dei paragrafi includono un gruppo di <em>tag</em> per annotare e visualizzare i titoli, un gruppo di <em>tag </em>per denotare i blocchi di testi, tra cui i paragrafi e infine dei tag per definire layout particolari.</p>
+<p>I <em>tag</em> per annotare e visualizzare i titoli di diverso livello sono <strong>`&lt;h1&gt;`</strong>,<strong> `&lt;h2&gt;`</strong>, e così via fino ad <strong>`&lt;h6&gt;`</strong>. I vari browser determinano per ognuno quale tipo di carattere, formato, grandezza e colore utilizzare (si veda figura 6.1). Queste proprietà sono comunque definibili usando CSS. </p>
+<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/43714eea65f60309101d636113baa691a5e0bc83/risorse/template.html" target="_blank"><strong>risorse/headings.html</strong></a></h3>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\cf35cca5d864cdad.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 6.1 Visualizzazione in Chrome dei 6 livelli di titolo (heading) in HTML</em></p>
+</td></tr>
+</table>
+<p><strong>Blocchi e paragrafi</strong></p>
+<p>Nell&#39;HTML originario, era stato introdotto il <em>tag </em><strong>`&lt;p&gt;` </strong>per denotare porzioni di testo che rappresentano un paragrafo. Il testo all&#39;interno di un paragrafo è rappresentato come una unica linea, indipendentemente da come viene scritto nel file e il browser si occupa di andare a capo quando necessario, dipendentemente dalla larghezza della finestra. Inoltre vengono aggiunte delle spaziature consone prima e dopo ogni paragrafo (figura 6.2).</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 592.42px" src="img\\4db13fe495ba0ce6.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 6.2 Gestione automatica dei paragrafi (tag `&lt;p&gt;...&lt;/p&gt;` in HTML</em></p>
+</td></tr>
+</table>
+<p>Benché ancora molto usato per annotare documenti, il tag `&lt;p&gt;` è poco versatile perché impone una formattazione difficile poi da gestire in modo autonomo (come vedremo CSS).</p>
 <p><strong>`&lt;div&gt;`  </strong></p>
 <p><strong>`&lt;span&gt;`  </strong></p>
+<p><strong>`&lt;pre&gt;`</strong></p>
+<p><strong>`&lt;blockquote&gt;`  </strong></p>
+<p><strong>`&lt;br&gt;` o `&lt;/br&gt;</strong></p>
+<p><strong>`&lt;hr&gt;` o `&lt;/hr&gt;</strong></p>
 
 
       </google-codelab-step>
@@ -170,7 +217,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Immagini e Tabelle" duration="0">
+      <google-codelab-step label="Tabelle, immagini e mappe" duration="0">
         
 
       </google-codelab-step>
