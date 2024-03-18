@@ -29,7 +29,8 @@
     
       <google-codelab-step label="Introduzione" duration="0">
         <p><strong>Ultimo aggiornamento:</strong> 2024-03-14 </p>
-<p>Questo è un manuale per un corso introduttivo a HTML e CSS.</p>
+<p><strong>Autore:</strong> Massimo Zancanaro</p>
+<p>Questo è il manuale per il corso introduttivo a HTML e CSS dell&#39;insegnamento <em>Informatica ed elementi di programmazione I</em> del corso di laurea triennale <em>Interfacce e Tecnologie della Comunicazione </em>dell&#39;Università di Trento. </p>
 <aside class="special"><p><strong>Nota:</strong> ci sono diversi <em>tool </em>commerciali per la creazione di siti web che permettono di creare e gestire documenti HTML e specifiche CSS in progetti anche molto complessi. Per le necessità di questo corso, è sufficiente un editor di testo qualunque ma è opportuno che abbia la possibilità di adattare la visualizzazione dei file HTML e permettere un minimo supporto all&#39;editing. Il consiglio è usare <a href="https://notepad-plus-plus.org/" target="_blank">Notepad++</a> o <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>, entrambi sono <em>open source </em>e hanno la possibilità di installare <em>plugin </em>per la gestione di file HTML. </p>
 <p>Per visualizzare un documento HTML (anche con CSS), è sufficiente aprire il file direttamente dal browser. </p>
 <p>Per fare delle prove veloci, possiamo usare anche dei tool online come ad esempio <a href="https://jsfiddle.net/" target="_blank">https://jsfiddle.net/</a> (è però importante imparare a lavorare partendo dai file di testo). Quando si usano i tool online, di solito si omettono i tag <em>html</em>, <em>head</em> e <em>body </em>e si lavora direttamente nella parte <em>body</em>. </p>
@@ -88,7 +89,7 @@
 <table>
 <tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\f906f7e3ca548157.png"></p>
 </td></tr>
-<tr><td colspan="1" rowspan="1"><p><em>Figura 1.2  Esempio di attributi e valori per specificare parametri dei tag HTML</em></p>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 2.1  Esempio di attributi e valori per specificare parametri dei tag HTML</em></p>
 </td></tr>
 </table>
 <h2 is-upgraded>Identificatori e classi dei <em>tag </em><strong>HTML</strong></h2>
@@ -98,8 +99,9 @@
       </google-codelab-step>
     
       <google-codelab-step label="La struttura di base di un documento HTML" duration="0">
-        <p>Un documento HTML è formato da due parti strutturali: una <em>head</em> che contiene informazioni di meta-livello (come vedremo sotto in dettaglio) e un <em>body</em> che contiene il testo opportunamente annotato con altri <em>tag</em>.</p>
-<p>I documenti HTML sono <em>file </em>di testo e di solito vengono salvati con estensione <em>.html</em>. L&#39;estensione del <em>file</em> non è in genere rilevante per una corretta interpretazione del contenuto ma diversi <em>editor</em> di testo riconoscono e adattano la visualizzazione del documento partendo dall&#39;estensione. In questo modo, gli editor possono ad esempio visualizzare i tag con un colore diverso rispetto al testo da annotare, indentare in modo appropriato i <em>tag </em>e suggerire quale <em>tag </em>è il prossimo da chiudere, facilitando così la preparazione dei documenti HTML.</p>
+        <p>Un documento HTML è formato da due parti strutturali: una <em>head</em> che contiene informazioni di meta-livello (come vedremo sotto in dettaglio) e un <em>body</em> che contiene il testo opportunamente annotato con altri <em>tag </em>(che saranno introdotti nel seguito).</p>
+<p>I documenti HTML sono <em>file </em>di testo e di solito vengono salvati con estensione <em>.html</em>. L&#39;estensione del <em>file</em> non è in genere rilevante per una corretta interpretazione del contenuto ma diversi <em>editor</em> di testo riconoscono e adattano la visualizzazione del documento partendo dall&#39;estensione. In questo modo, gli editor possono ad esempio visualizzare i tag con un colore diverso rispetto al testo da annotare, indentare in modo appropriato i <em>tag  </em>e suggerire quale <em>tag </em>è il prossimo da chiudere, facilitando così la preparazione dei documenti HTML.</p>
+<p>La figura 3.1 presenta lo scheletro di un annotazione HTML. L&#39;indentazione dei <em>tag</em> seguendo la struttura gerarchica (cioè, le annotazione incorporate in altre annotazioni sono spostate più a destra) non è richiesta dal linguaggio di <em>markup </em>ma facilita molto l&#39;annotazione di documenti, specialmente quando la struttura inizia a diventare un po&#39; complessa.</p>
 <h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/43714eea65f60309101d636113baa691a5e0bc83/risorse/template.html" target="_blank"><strong>risorse/template.html</strong></a></h3>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -111,7 +113,7 @@
   &lt;!-- qui va inserito il testo e le annotazioni di struttura  --&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-<p><em>Figura 2.1 Struttura di base di un documento HTML</em></p>
+<p><em>Figura 3.1 Struttura di base di un documento HTML</em></p>
 <p>Le sequenze di caratteri che iniziano con `&lt;!` non sono dei <em>tag </em>propriamente detti ma delle <em>direttive</em> che vengono fornite all&#39;interprete per gestire casi particolari. Nell&#39;esempio sopra, se ne trovano due:  `&lt;!DOCTYPE html&gt;` e `&lt;!-- --&gt;`.</p>
 <p>`&lt;!DOCTYPE html&gt;` è una direttiva che indica al browser (o in genere all&#39;interprete) che il documento è in formato HTML. La maggior parte dei browser funziona anche in assenza di questa indicazione ma in alcuni casi è importante che sia. Si possono opzionalmente anche aggiungere dettagli sulla versione specifica. </p>
 <p>`&lt;!-- --&gt;` è una direttiva che indica che il testo incluso è un commento (e quindi non è tecnicamente una parte del documento che viene annotata). Il browser (o l&#39;interprete) semplicemente ignora tutto ciò che viene scritto all&#39;interno delle due parti (si veda l&#39;esempio sopra).</p>
@@ -129,7 +131,7 @@
 <table>
 <tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\e78a26be083d13c5.png"></p>
 </td></tr>
-<tr><td colspan="1" rowspan="1"><p><em>Figura 5.1 Esempio di documento  HTML senza nessuna formattazione ma con un head che contiene il titolo (attenzione a notare dove il titolo viene visualizzato!)</em></p>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 4.1 Esempio di documento  HTML senza nessuna formattazione ma con un head che contiene il titolo (attenzione a notare dove il titolo viene visualizzato!)</em></p>
 </td></tr>
 </table>
 <p><strong>`&lt;meta&gt;`</strong> viene usato per inserire direttive di meta-livello, utili sia per visualizzare il documento (ad esempio quale gruppo di caratteri utilizzare) che per archiviare i documenti HTML in database (come la specificazione dell&#39;autore o dell&#39;autrice) e per indicizzare il contenuto sui motori di ricerca. Gli attributi più usati sono riportati nella figura 5.2. L&#39;attributo <em>charset </em>serve per definire lo specifico gruppo di caratteri (in particolare, se si usano caratteri non latini). L&#39;attributo <em>viewport </em>seleziona la dimensione del display uguale a quella del dispositivo: in questo modo le pagine vengono visualizzate nel modo più appropriato (per usi molti particolari e avanzati, è necessario modificare questa impostazione che comunque andrebbe sempre specificata). L&#39;attributo <em>meta </em>è più generico e richiede sempre di specificare anche l&#39;attributo content: il primo definisce la categoria (ad esempio, author o keyword e il secondo specifica i valori della categoria). </p>
@@ -149,7 +151,7 @@
   &lt;meta http-equiv=&#34;Expires&#34; content=&#34;0&#34;&gt;
 
  &lt;/head&gt;</code></pre>
-<p><em>Figura 5.2 Struttura di base di un documento HTML</em></p>
+<p><em>Figura 4.2 Struttura di base di un documento HTML</em></p>
 <aside class="warning"><p><strong>Consiglio:</strong> Una serie di direttive <em>meta </em>molto utili quando si preparano documenti HTML sono quelle per evitare che il browser utilizzi la <em>cache</em>, cioè il meccanismo di memoria interna che evita di ricaricare la pagina in certe condizioni. Mentre questa tecnica è molto utile, per velocizzare la visualizzazione del sito, mentre si sta modificando e provando il codice HTML, è più utile che il browser carichi sempre il documento. Per evitare la cache si inseriscono nella sezione head le seguenti direttive <em>meta</em>:</p>
 <p><em>&lt;meta http-equiv=&#34;Cache-Control&#34; content=&#34;no-cache, no-store, must-revalidate&#34;&gt;</em></p>
 <p><em>&lt;meta http-equiv=&#34;Pragma&#34; content=&#34;no-cache&#34;&gt;</em></p>
@@ -180,14 +182,14 @@
 <p>I tag di formattazione (<em>formatting</em>) di porzioni di testo si dividono in due categorie: quelli che indicano in modo specifico quale formattazione applicare (grassetto, italico, ecc.) e quelli che indicano la funzione logica che si vuole ottenere (enfasi, cancellazione, ecc.). Nelle prime versioni di HTML, erano presenti solo i primi in quanto la funzione principale era la visualizzazione di un documento. </p>
 <p>Oggi si preferisce usare la formattazione logica perché un documento potrebbe essere reso in modalità diverse (audiolettura, o visualizzazione su formati diversi). Ad esempio, la porzione di testo HTML <em>`questo testo è &lt;b&gt;importante&lt;/b&gt;`</em> viene visualizzato mettendo in grassetto la parola &#34;importante&#34;: &#34;questo testo è <strong>importante</strong>&#34;. Usando il tag `&lt;strong&gt;` invece che `&lt;b&gt;`, si ottiene lo stesso risultato ma si rende più esplicito il significato comunicativo che si vuole dare alla parola. Un interprete potrebbe quindi meglio rappresentare questo significato laddove il grassetto non possa essere usato (come nel caso di una audiolettura dove andrebbe stressata la voce sulla parola per rendere l&#39;importanza), oppure possa non essere efficace (ad esempio, nei tipi di carattere usato per facilitare la lettura alle persone con dislessia, il grassetto non è reso bene perché i caratteri sono già molto spessi, in questo caso, il browser potrebbe sottolineare la parola o visualizzarla più grande).</p>
 <p>Inoltre, come vedremo in seguito, le formattazioni specifiche si possono fare in modo più efficiente usando CSS. Per questo motivo, diversi <em>tag </em>di questa categoria, anche se non tutti, sono &#34;deprecati&#34; (<em>deprecated</em>) in HTML5: significa che sono ancora utilizzabili ma se ne sconsiglia l&#39;uso perché nelle successive versioni potrebbero essere eliminati e quindi rendere il documento non più visualizzabile sui nuovi browser.</p>
-<p><strong>Elenco dei tag di formattazione specifica: </strong></p>
+<h3 is-upgraded><em>Elenco dei tag di formattazione specifica</em></h3>
 <p><strong>`&lt;b&gt; ... &lt;/b&gt;`</strong>: visualizza il testo in grassetto; </p>
 <p><strong>`&lt;i&gt; ... &lt;/i&gt;`</strong>: visualizza il testo in italico;</p>
 <p><strong>`&lt;u&gt; ... &lt;/u&gt;`</strong>:testo viene visualizzato con una sottolineatura;</p>
 <p><strong>`&lt;s&gt; ... &lt;/s&gt;` e `&lt;strike&gt; ... &lt;/strike&gt;`</strong>: il testo annotato viene visualizzato come barrato (in HTML5, entrambi i <em>tag </em>sono deprecati). </p>
 <p><strong>`&lt;small&gt; ... &lt;/small&gt;` </strong>: il testo annotato viene visualizzato con caratteri di dimensioni più piccole rispetto al resto del documento; </p>
 <p><strong>`&lt;sub&gt; ... &lt;/sub&gt;` </strong>e<strong> `&lt;sup&gt; ... &lt;/sup&gt;`</strong>: il testo viene visualizzato come pedice o apice, rispettivamente. </p>
-<p><strong>Elenco dei tag di formattazione logica: </strong></p>
+<h3 is-upgraded>Elenco dei tag di formattazione logica </h3>
 <p><strong>` &lt;strong&gt; ... &lt;/strong&gt;`: </strong>visualizza il testo in formato più accentuato, di solito viene usato il grassetto;</p>
 <p><strong> `&lt;em&gt; ... &lt;/em&gt;`</strong>: visualizza il testo dando maggiore enfasi, di solito viene usato l&#39;italico;</p>
 <p><strong> `&lt;del&gt; ... &lt;/del&gt;` e ` &lt;ins&gt; ... &lt;/ins&gt;` </strong>: indicano rispettivamente un testo da cancellare, di solito viene visualizzato come testo barrato, e come testo da aggiungere, di solito visualizzato come sottolineato;  </p>
@@ -206,7 +208,7 @@
 <tr><td colspan="1" rowspan="1"><p><em>Figura 6.2 Visualizzazione in Chrome dei 6 livelli di titolo (heading) in HTML</em></p>
 </td></tr>
 </table>
-<p><strong>Blocchi e paragrafi</strong></p>
+<h3 is-upgraded><em>Blocchi e paragrafi</em></h3>
 <p>Nell&#39;HTML originario, era stata introdotta l&#39;annotazione <strong>`&lt;p&gt;...&lt;/p&gt;` </strong>per denotare porzioni di testo che rappresentano un paragrafo. Il testo all&#39;interno di un paragrafo è rappresentato come una unica linea, indipendentemente da come viene scritto nel file e il browser si occupa di andare a capo quando necessario, dipendentemente dalla larghezza della finestra. Inoltre vengono aggiunte delle spaziature appropriate prima e dopo ogni paragrafo (figura 6.3).</p>
 <h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/headings.html" target="_blank"><strong>risorse/paragrafi.html</strong></a></h3>
 <table>
@@ -269,11 +271,52 @@
       </google-codelab-step>
     
       <google-codelab-step label="Liste puntate e liste numerate" duration="0">
-        
+        <p>La possibilità di visualizzare liste di elementi è un aspetto importante delle pagine web. Anche se tecnicamente, si possono  fare liste mettendo in sequenza dei blocchi di <strong><em>`&lt;div&gt;`</em></strong> (e poi eventualmente formattarli con CSS), HTML mette a disposizione due annotazioni specifiche con una formattazione standard: le liste ordinate (e numerate) e quelle non ordinate. </p>
+<p>Le liste ordinate sono annotate con il <em>tag </em><strong>`&lt;ol&gt;..&lt;\ol&gt;` </strong>(che sta per <em>ordered list</em>) e gli elementi della lista con il <em>tag </em><strong>`&lt;li&gt;`</strong> (che sta per <em>list item</em>). Le liste ordinate vengono indentate leggermente a destra e usano i numeri arabi. Questa e altre formattazioni possono essere personalizzate usando CSS, come vedremo in seguito.</p>
+<p>Per le liste non annotate si usa il <em>tag </em><strong>`&lt;ul&gt;..&lt;\ul&gt;` </strong>(che sta per <em>unordered list</em>) e per gli elementi si usa ancora il <em>tag </em><strong>`&lt;li&gt;`</strong>. Anche le liste non ordinate sono leggermente indentate a destra e di default viene usato un cerchio pieno, ma anche questi sono parametri che possono essere modificati con CSS.</p>
+<p>È anche possibile innestare liste dentro ad altre liste, inserendole all&#39;interno delle annotazioni di un elemento <em>`&lt;li&gt;...&lt;/li&gt;`. </em></p>
+<p>La figura 8.1 illustra le varie possibilità.</p>
+<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/many_lists.html" target="_blank"><strong>risorse/many_lists.html</strong></a> </h3>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\a9081c7222e5ee43.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 8.1 Varie possibilità per visualizzare liste (e liste innestate in liste) </em></p>
+</td></tr>
+</table>
+
 
       </google-codelab-step>
     
       <google-codelab-step label="Tabelle, immagini e mappe" duration="0">
+        <p>Altri aspetti fondamentali per un qualunque strumento di tipo editoriale includono la possibilità di fare delle tabelle, includere delle immagini. Per uno strumento editoriale online, è rilevante anche considerare la possibilità di rendere attive le immagini trasformandole in mappe interattive. Tutte queste possibilità sono incluse nell&#39;HTML di base senza la necessità di usare CSS o funzioni di Javascript (anche se, come per tutte le altre caratteristiche di base, si può poi personalizzarne la resa visuale).</p>
+<h2 is-upgraded><strong>Gestione delle tabelle</strong></h2>
+<p>Le tabelle sono strutture visuali che organizzano dei dati testuali in un certo numero di righe e un certo numero di colonne. All&#39;incrocio di una riga e una colonna si ha una cosiddetta &#34;cella&#34; che contiene il testo da visualizzare. Di solito, le celle della prima riga contengono i titoli delle colonne, e in questo caso la riga si chiama &#34;testata&#34; (<em>header</em>) della tabella.</p>
+<p>Le tabelle vengono gestite usando i <em>tag</em> per le righe <strong>`&lt;tr&gt;`</strong> (per <em>table row</em>) e quelli per le celle <strong>`&lt;td&gt;`</strong> (per <em>table data</em>) oppure <strong>`&lt;th&gt;`</strong> (per <em>table header) </em>innestati all&#39;interno del <em>tag </em><strong>`&lt;table&gt;...&lt;/table&gt;`</strong> che fornisce il contesto per visualizzare e per riferirsi (ad esempio con un attributo <em>id</em>) ad una tabella. La figura 8.2 presenta un esempio.</p>
+<p>Un punto di attenzione è che le tabelle non hanno bordo ma lo si può aggiungere con l&#39;attributo <strong><em>border </em></strong>del <em>tag</em> `&lt;table&gt;`. Anche in questo caso, personalizzazioni più efficaci sono possibili con l&#39;uso di CSS, come vedremo più avanti.</p>
+<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/many_lists.html" target="_blank"><strong>risorse/many_lists.html</strong></a> </h3>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\bc4bf792b8108efd.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 8.2 Esempio di una tabella con uso di rowspan </em>e <em>colspan</em></p>
+</td></tr>
+</table>
+<p>Come si vede nella figura 8.2, gli attributi <strong><em>colspan </em></strong>e <strong><em>rowspan </em></strong>possono essere usati per avere celle che si distribuiscono su più righe o su più colonne.</p>
+<h2 is-upgraded><strong>Inserimento immagini</strong></h2>
+<p>Per inserire un&#39;immagine in HTML, si usa il <em>tag self-closing </em><strong>`&lt;img&gt;` </strong>(o, <strong>`&lt;img/&gt;`</strong>). La specificazione di quale immagine visualizzare è fornita nell&#39;attributo <strong><em>src </em></strong>come nome di file o come URL.</p>
+<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/image.html" target="_blank"><strong>risorse/image.html</strong></a></h3>
+<pre><code>&lt;img src=&#34;img.jpg&#34;/&gt;
+
+&lt;img src=&#34;http://.../img.jpg&#34;/&gt;
+
+&lt;img src=&#34;img.jpg&#34;, alt=&#34;qui c&#39;è un&#39;immagine di un gatto&#34;, title=&#34;il gatto&#34;, height=&#34;xxx&#34;, width=&#34;xxx&#34;/&gt;</code></pre>
+<p><em>Figura 8.3 Template per inserire un&#39;immagine con il tag `&lt;img&gt;` (si veda l&#39;HTML per un esempio concreto)</em></p>
+<p>Il tag <em>`&lt;img&gt;` </em>permette anche l&#39;uso di altri attributi opzionali. L&#39;attributo <strong><em>alt </em></strong>è molto importante per l&#39;accessibilità in quanto è inteso fornire una descrizione testuale dell&#39;immagine per i dispositivi di lettura per le persone non vedenti. L&#39;attributo <strong><em>title </em></strong>invece è il titolo dell&#39;immagine e, per i browser dei computer desktop, viene visualizzata quando il mouse passa sopra l&#39;immagine. Infine, si possono specificare gli attributi <strong><em>width </em></strong>e<strong> height </strong>dell&#39;immagine che hanno una doppia funzione: da una parte, pre-calcolano lo spazio occupato dall&#39;immagine e la possono quindi caricare in parallelo al resto del documento (è importante per immagini molto grandi e per connessioni lente); dall&#39;altra parte, possono essere usati per ridimensionare l&#39;immagine in fase di caricamento (ma non è una tecnica computazionalmente molto efficiente).</p>
+<h2 is-upgraded><strong>Da immagini a mappe interattive</strong></h2>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Introduzione a CSS" duration="0">
         
 
       </google-codelab-step>
