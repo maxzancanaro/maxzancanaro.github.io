@@ -34,7 +34,7 @@
 <p>Questo manuale è preparato per il corso introduttivo a HTML e CSS dell&#39;insegnamento <em>Informatica ed elementi di programmazione I</em> del corso di laurea triennale <em>Interfacce e Tecnologie della Comunicazione </em>dell&#39;Università di Trento. </p>
 <p>Gli obiettivi di apprendimento includono:</p>
 <ul>
-<li>riconoscere e comprendere la differenza tra linguaggio di markup, linguaggi di specifiche e linguaggio di programmazione</li>
+<li>riconoscere e comprendere la differenza tra linguaggio di markup, linguaggi di specifiche e linguaggio di programmazione classici</li>
 <li>comprendere e spiegare HTML come linguaggio di markup derivato da SGML</li>
 <li>conoscere i principali tag di HTML e distinguere i tag specifici da quelli logici; comprenderne le differenze e le motivazioni legate all&#39;evoluzione del linguaggio</li>
 <li>conoscere le principali categorie di specifiche CSS</li>
@@ -53,7 +53,7 @@
     
       <google-codelab-step label="Il concetto di markup" duration="0">
         <p>Un linguaggio di <em>markup </em>è un modo formale e strutturato di annotare un testo per identificare le varie parti al fine di usare queste informazioni per elaborare il testo in modo automatico: di solito (anche se non esclusivamente) per formattare il testo al fine di presentarlo su uno specifico media.  </p>
-<p>La differenza tra i linguaggi di <em>markup </em>e i linguaggi di programmazione è che mentre quest&#39;ultimi sono usati per dare istruzioni per eseguire determinate funzioni, i primi servono per annotare la struttura di un testo al fine di descriverne le parti.</p>
+<p>Anche se in senso generale, i linguaggio di <em>markup </em>si possono considerare linguaggio di programmazione in quanto servono a specificare ad un computer come operare su dei dati, la differenza tra i linguaggi di <em>markup </em>e i linguaggi di programmazione è che mentre quest&#39;ultimi sono usati per dare istruzioni per eseguire determinate funzioni, i primi servono per annotare la struttura di un testo al fine di descriverne le parti (si veda, Hemmendinger, 2023; Britannica Editors, 2024).</p>
 <p>Oltre allo HTML, che vedremo in seguito, esistono molti altri linguaggi di <em>markup. </em>Ad esempio, SGML (<em>Standard Generalized Markup Language</em>), da cui HTML deriva, è stato definito per creare classi di linguaggi di <em>markup</em>, in particolare per annotare strutture di testi letterari a fini di archiviazione e indicizzazione e come passaggio preliminare per analisi bibliografiche. XML (<em>eXtended Markup Language</em>) è una forma semplificata e più strutturata di SGML usata per annotare strutture di dati. <a href="https://en.wikipedia.org/wiki/Markdown" target="_blank">Markdown</a> e <a href="https://en.wikipedia.org/wiki/LaTeX" target="_blank">LaTex</a> vengono usati per definire aspetti specifici di formattazione e sono molto usati in ambito editoriale.</p>
 <p>Un linguaggio di <em>markup </em>consiste in una serie di elementi extra-testuali che vengono inseriti nel testo per annotare (o marcare) gli aspetti che si ritengono rilevanti della struttura. La figura 1.1 mostra un esempio di annotazione della struttura di una antologia di poesie. Nell&#39;esempio, si suppone che un&#39;antologia (<em>anthology</em>) sia formata da una a più poesie (<em>poem</em>) ognuna delle quali composte da un numero variabile di stanze a loro volta composte da un numero variabile di linee (<em>line</em>).  </p>
 <table>
@@ -339,7 +339,7 @@
 <p>- per <em>shape=&#34;poly&#34;,  </em>si indicano le coordinate x e y dell&#39;elenco dei vertici del poligono che diventerà la regione cliccabile.</p>
 <p>Per ogni elemento <em>`&lt;area&gt;`</em> si deve poi specificare con l&#39;attributo <em>href </em>l&#39;elemento di destinazione (si vedano le regole del <em>tag `&lt;a&gt;` </em>viste sopra). È una buona norma favorire l&#39;accessibilità fornendo anche un testo alternativo nell&#39;attributo <em>alt</em>.</p>
 <p>Le figure 9.1 e 9.2 mostrano un esempio di un&#39;immagine di una cartina dell&#39;Europa in cui la regione corrispondente all&#39;Italia è resa cliccabile e si collega ipertestualmente ad un altro documento HTML.</p>
-<h3 is-upgraded><strong>risorse/mappa</strong><strong>.html</strong> e <strong>risorse/italia_mappa.html</strong></h3>
+<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/mappa.html" target="_blank"><strong>risorse/mappa.html</strong></a> e <a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/italia_mappa.html" target="_blank"><strong>risorse/italia mappa.html</strong></a></h3>
 <pre><code>&lt;map name=&#34;map&#34;&gt;
  &lt;area shape=&#34;poly&#34; coords=&#34;308,629,301,585,303,584,380,560,400,568,407,593,380,599,450,699,493,701,455,758,445,784,392,768,437,749,440,714,356,653,308,629&#34; href=&#34;italia_mappa.html&#34; alt=&#34;Area dell&#39;Italia&#34;&gt;
 &lt;/map&gt;                </code></pre>
@@ -355,12 +355,26 @@
       </google-codelab-step>
     
       <google-codelab-step label="Introduzione a CSS" duration="0">
-        
+        <p>Cascading Style Sheet (CSS) è un linguaggio di specifiche per la formattazione grafica. È stato inventanto più o meno contestualmente all&#39;HTML da un collega di Tim Berners-Lee, Håkon Wium Lie,  sempre al CERN (Munro, 2024) per permettere agli autori di documenti HTML un minimo di personalizzazione nelle visualizzazioni dei documenti (Bos, 2016). È però solo nel 2016, con lo standard HTML4, che si finalizza l&#39;idea di una chiara separazione tra la definizione della struttura dei documenti (in HTML) e la specificazione delle modalità di visualizzazione o, in altre parole, lo stile (in CSS). </p>
+<p>Un concetto importante già presente nelle prima versioni di CSS è la nozione di &#34;progressività&#34; nella definizione degli stili: questi sono raggruppati in fogli (sheet) che possono essere specificati in sequenza (<em>cacading</em>) e in caso di conflito (uno stile dichiarato più volte) viene applicata solo l&#39;ultima definizione. Questa regola permette di poter prima definire parametri generali e poi concretizzarli e adattarli ad uno singolo dispositivo, semplicemente riscrivendo quando già specificato precedentemente. In questo modo, la responsabilità di come visualizzare un documento è in parte sulle spalle dell&#39;autore del documento e in parte sulle spalle del browser: nel caso del web, questa caratteristica è importante perché l&#39;autore può non essere sempre consapevole di tutte le caratteristiche dei vari dispositivi su cui il documento sarà visualizzato. </p>
+<p>A differenza di HTML, CSS non è un linguaggio di <em>markup</em>, nel senso che gli stili non vengono applicati direttamente sul testo in formato di annotazione ma è un linguaggio di specifiche che si applicano ai <em>tag</em> HTML e alle loro istanze individuali (cioè ad una specifica annotazione con un <em>tag </em>di un certo tipo all&#39;interno del documento) e a gruppi di istanze (che in CSS vengoni definiti &#34;classi&#34;).</p>
+<p>La struttura tipica delle specifiche di CSS è rappresentata in figura 10.1.  Il <em>tag </em>da definire si trova all&#39;inizio di una riga e le proprietà da modificare (sovrascrivendo i valori precedenti) vengono messe all&#39;interno di parentesi graffe `<strong>{...}`</strong>. Ogni <em>tag </em>ha un insieme predefinito di proprietà (le principali sono descritte nel seguito). Ogni proprietà che si vuole modificare viene elencata in una riga separata seguita dal nuovo valore della proprietà (anche l&#39;insieme dei valori per ogni proprietà è definito a priori). Le coppie proprietà (<em>property</em>) e valore (<em>value</em>) sono separate dal carattere ‘:&#39; e terminate dal carattere ‘;&#39;.</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\2e64535a04c4a103.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 10.1 Schema di base della specificazione di un tag in CSS</em></p>
+</td></tr>
+</table>
+<p>Gli </p>
+
 
       </google-codelab-step>
     
       <google-codelab-step label="Riferimenti" duration="0">
-        <p>Conklin, Jeff (1987). Hypertext: An Introduction and Survey. Computer, 20(9), 17–41. <a href="https://doi.org/10.1109/MC.1987.1663693" target="_blank">https://doi.org/10.1109/MC.1987.1663693</a> </p>
+        <p>Britannica, T. Editors of Encyclopaedia (2024, February 7). markup language. Encyclopedia Britannica. <a href="https://www.britannica.com/technology/markup-language" target="_blank">https://www.britannica.com/technology/markup-language</a> (disponibile a Marzo 2024) </p>
+<p>Conklin, Jeff (1987). Hypertext: An Introduction and Survey. Computer, 20(9), 17–41. <a href="https://doi.org/10.1109/MC.1987.1663693" target="_blank">https://doi.org/10.1109/MC.1987.1663693</a> (disponibile a Marzo 2024) </p>
+<p>Hemmendinger, D. (2023, December 26). computer programming language. Encyclopedia Britannica. <a href="https://www.britannica.com/technology/computer-programming-language" target="_blank">https://www.britannica.com/technology/computer-programming-language</a> (disponibile a Marzo 2024) </p>
+<p>Munro, A. (2024) <em>CSS</em>. <em>Encyclopedia Britannica</em>.  <a href="https://www.britannica.com/technology/CSS-programming-language" target="_blank">https://www.britannica.com/technology/CSS-programming-language</a> </p>
 <p>Sperberg-McQueen C.M. &amp; Burnard Lu (1999) Guidelines for Electronic Text Encoding and Interchange, <em>TEI P3 Text Encoding Initiative, </em>Chicago, Oxford <a href="https://www.tei-c.org/Vault/GL/P3/index.htm" target="_blank">https://www.tei-c.org/Vault/GL/P3/index.htm</a> (disponibile a Marzo 2024) </p>
 <p>WHATWG, HTML Living Standard <a href="https://html.spec.whatwg.org/" target="_blank">https://html.spec.whatwg.org/</a> (disponibile a Marzo 2024) </p>
 <p>W3School HTML Reference <a href="https://www.w3schools.com/tags/" target="_blank">https://www.w3schools.com/tags/</a> (disponibile a Marzo 2024)</p>
