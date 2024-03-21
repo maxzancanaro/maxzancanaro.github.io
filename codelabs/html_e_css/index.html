@@ -30,12 +30,23 @@
       <google-codelab-step label="Introduzione" duration="0">
         <p><strong>Ultimo aggiornamento:</strong> 2024-03-14 </p>
 <p><strong>Autore:</strong> Massimo Zancanaro</p>
-<p>Questo è il manuale per il corso introduttivo a HTML e CSS dell&#39;insegnamento <em>Informatica ed elementi di programmazione I</em> del corso di laurea triennale <em>Interfacce e Tecnologie della Comunicazione </em>dell&#39;Università di Trento. </p>
+<p><strong>Termini di utilizzo: </strong><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><strong>CC BY-NC 4.0</strong></a></p>
+<p>Questo manuale è preparato per il corso introduttivo a HTML e CSS dell&#39;insegnamento <em>Informatica ed elementi di programmazione I</em> del corso di laurea triennale <em>Interfacce e Tecnologie della Comunicazione </em>dell&#39;Università di Trento. </p>
+<p>Gli obiettivi di apprendimento includono:</p>
+<ul>
+<li>riconoscere e comprendere la differenza tra linguaggio di markup, linguaggi di specifiche e linguaggio di programmazione</li>
+<li>comprendere e spiegare HTML come linguaggio di markup derivato da SGML</li>
+<li>conoscere i principali tag di HTML e distinguere i tag specifici da quelli logici; comprenderne le differenze e le motivazioni legate all&#39;evoluzione del linguaggio</li>
+<li>conoscere le principali categorie di specifiche CSS</li>
+<li>saper riconoscere e prevedere l&#39;effetto sulla visualizzazione di un documento dell&#39;applicazione di vari tag e delle principali specifiche CSS</li>
+<li>saper applicare specifici tag per realizzare documenti HTML di media complessità</li>
+</ul>
+<p>I prerequisiti per poter seguire questo corso comprendono una conoscenza di base dell&#39;architettura logica del World-Wide Web, del concetto di <em>Unified Resource Locator </em>(URL) e del browser web come interprete e visualizzatore di documenti/pagine.  Per la parte finale del modulo, è richiesta una competenza specifica di medio livello di Javascript che dovrebbe essere stata maturata alla fine del primo modulo del corso.</p>
+<p>Il contenuto di questo corso e i documenti HTML di esempio sono disponibili nel repository github <a href="https://github.com/maxzancanaro/html_base/" target="_blank">https://github.com/maxzancanaro/html_base/</a>. </p>
 <aside class="special"><p><strong>Nota:</strong> ci sono diversi <em>tool </em>commerciali per la creazione di siti web che permettono di creare e gestire documenti HTML e specifiche CSS in progetti anche molto complessi. Per le necessità di questo corso, è sufficiente un editor di testo qualunque ma è opportuno che abbia la possibilità di adattare la visualizzazione dei file HTML e permettere un minimo supporto all&#39;editing. Il consiglio è usare <a href="https://notepad-plus-plus.org/" target="_blank">Notepad++</a> o <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>, entrambi sono <em>open source </em>e hanno la possibilità di installare <em>plugin </em>per la gestione di file HTML. </p>
 <p>Per visualizzare un documento HTML (anche con CSS), è sufficiente aprire il file direttamente dal browser. </p>
 <p>Per fare delle prove veloci, possiamo usare anche dei tool online come ad esempio <a href="https://jsfiddle.net/" target="_blank">https://jsfiddle.net/</a> (è però importante imparare a lavorare partendo dai file di testo). Quando si usano i tool online, di solito si omettono i tag <em>html</em>, <em>head</em> e <em>body </em>e si lavora direttamente nella parte <em>body</em>. </p>
 </aside>
-<p><a href="https://github.com/maxzancanaro/html_base/" target="_blank"><paper-button class="colored" raised>Repository Github</paper-button></a></p>
 
 
       </google-codelab-step>
@@ -312,6 +323,33 @@
 <p><em>Figura 8.3 Template per inserire un&#39;immagine con il tag `&lt;img&gt;` (si veda l&#39;HTML per un esempio concreto)</em></p>
 <p>Il tag <em>`&lt;img&gt;` </em>permette anche l&#39;uso di altri attributi opzionali. L&#39;attributo <strong><em>alt </em></strong>è molto importante per l&#39;accessibilità in quanto è inteso fornire una descrizione testuale dell&#39;immagine per i dispositivi di lettura per le persone non vedenti. L&#39;attributo <strong><em>title </em></strong>invece è il titolo dell&#39;immagine e, per i browser dei computer desktop, viene visualizzata quando il mouse passa sopra l&#39;immagine. Infine, si possono specificare gli attributi <strong><em>width </em></strong>e<strong> height </strong>dell&#39;immagine che hanno una doppia funzione: da una parte, pre-calcolano lo spazio occupato dall&#39;immagine e la possono quindi caricare in parallelo al resto del documento (è importante per immagini molto grandi e per connessioni lente); dall&#39;altra parte, possono essere usati per ridimensionare l&#39;immagine in fase di caricamento (ma non è una tecnica computazionalmente molto efficiente).</p>
 <h2 is-upgraded><strong>Da immagini a mappe interattive</strong></h2>
+<p>Essendo pensato principalmente in ambiente interattivo e multimediale, HTML ha un supporto (seppur limitato) per creare dei link ipertestuali anche a partire da immagini. </p>
+<p>La figure 9.1 illustra lo schema per costruirle. Si parte dall&#39;immagine che vogliamo usare per definire le aree cliccabili che diventeranno àncore per i link ipertestuali. Le aree vengono poi definite in una struttura separata (detta mappa) denotata dai tag <strong>`&lt;map&gt;...&lt;/map&gt;`</strong>. </p>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\cebcbab54e2ff2ac.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 9.1 Template per definire immagini con àncore ipertestuali (chiamate in HTML mappe)</em></p>
+</td></tr>
+</table>
+<p>Per collegare l&#39;immagine alla mappa, si usa un identificatore, cioè una stringa di caratteri che può essere costruita a piacere ma deve essere unica all&#39;interno del documento. Questo identificatore viene specificato con l&#39;attributo <strong><em>name </em></strong>nel <em>tag  </em>`&lt;map&gt;` e viene poi usato nel tag <em>`&lt;img&gt;</em>` nell&#39;attributo <strong><em>usemap</em></strong>. È importante notare che quando si usa come identificativo si usa la stringa normale mentre quando si usa come riferimento si deve anteporre il carattere ‘#&#39;.</p>
+<p>All&#39;interno della struttura `&lt;map&gt;...&lt;/map&gt;`, si usa il tag <strong>`&lt;area&gt;` </strong>per specificare le regioni che saranno cliccabili. Questo tag ha un&#39;attributo <strong>shape </strong>che indica la forma dell&#39;area (sono possibili tre alternative: &#34;circle&#34;, &#34;rect&#34; e &#34;poly&#34;) e l&#39;attributo <strong>coords</strong> che specifica i punti sull&#39;immagine per delimitare l&#39;area. I punti sono espressi come coppie di numeri interi considerando l&#39;immagine com un piano con il punto 0,0 nell&#39;angolo in alto a sinstra. </p>
+<p>Il formato dei punti nell&#39;attributo <em>coords </em>di un <em>tag `&lt;area&gt;`</em> dipende dallo specifico <em>shape</em></p>
+<p>- per <em>shape=&#34;circle&#34;, </em>nell&#39;attributo <em>coords</em> si deve specificare la coordinata x e la coordinata y del centro e il raggio separati da virgole del cerchio che si vuole indicare come regione cliccabile;</p>
+<p>- per <em>shape=&#34;rect&#34;,  </em>nell&#39;attributo <em>coords</em> si specificano le coordinate x e y dell&#39;angolo in alto a sinistra e dell&#39;angolo in basso a destra del quadrato (separati da virgole) che si vuole indicare come regione cliccable;</p>
+<p>- per <em>shape=&#34;poly&#34;,  </em>si indicano le coordinate x e y dell&#39;elenco dei vertici del poligono che diventerà la regione cliccabile.</p>
+<p>Per ogni elemento <em>`&lt;area&gt;`</em> si deve poi specificare con l&#39;attributo <em>href </em>l&#39;elemento di destinazione (si vedano le regole del <em>tag `&lt;a&gt;` </em>viste sopra). È una buona norma favorire l&#39;accessibilità fornendo anche un testo alternativo nell&#39;attributo <em>alt</em>.</p>
+<p>Le figure 9.1 e 9.2 mostrano un esempio di un&#39;immagine di una cartina dell&#39;Europa in cui la regione corrispondente all&#39;Italia è resa cliccabile e si collega ipertestualmente ad un altro documento HTML.</p>
+<h3 is-upgraded><strong>risorse/mappa</strong><strong>.html</strong> e <strong>risorse/italia_mappa.html</strong></h3>
+<pre><code>&lt;map name=&#34;map&#34;&gt;
+ &lt;area shape=&#34;poly&#34; coords=&#34;308,629,301,585,303,584,380,560,400,568,407,593,380,599,450,699,493,701,455,758,445,784,392,768,437,749,440,714,356,653,308,629&#34; href=&#34;italia_mappa.html&#34; alt=&#34;Area dell&#39;Italia&#34;&gt;
+&lt;/map&gt;                </code></pre>
+<p><em>Figura 9.1 Esempio di mappa interattiva costruita sul un&#39;immagine</em></p>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\48436e3da2f8f21c.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 9.2 L&#39;immagine della mappa usata nell&#39;esempio di figura 9.1 e i punti (non visibili nella pagina web) usati per tracciare il contorno dell&#39;area della mappa da usare come anchor. </em></p>
+</td></tr>
+</table>
 
 
       </google-codelab-step>
