@@ -249,7 +249,7 @@
 </td></tr>
 </table>
 <p>A differenza di altri linguaggi per definire ipertesti, HTML è stato tenuto volutamente molto semplice. L&#39;unico modo per definire strutture ipertestuali è usare il <em>tag </em>è <strong>`&lt;a&gt; ...&lt;/a&gt;` </strong>che sta per <em>anchor</em>, ossia la porzione di testo a cui si connette (o, appunto, si &#34;àncora&#34;) il collegamento (<em>link</em>). I collegamenti possono essere esterni (ad altri documenti o pagine) oppure  interni verso altre porzioni dello stesso documento. </p>
-<p>La destinazione del collegamento viene specificata con l&#39;attributo <em>href</em>.  Se il valore di questo attributo è un nome di un file, questo viene aperto, se invece è un URL viene caricato via internet. Per fare un collegamento interno, viene invece indicato un codice identificativo prefisso dal carattere #. Lo stesso codice deve essere poi indicato in un qualunque <em>tag </em>dello stesso documento usando l&#39;attributo <em>id</em>.</p>
+<p>La destinazione del collegamento viene specificata con l&#39;attributo <strong><em>href</em></strong>.  Se il valore di questo attributo è un nome di un file, questo viene aperto, se invece è un URL viene caricato via internet. Per fare un collegamento interno, viene invece indicato un codice identificativo prefisso dal carattere #. Lo stesso codice deve essere poi indicato in un <em>tag </em>dello stesso documento usando l&#39;attributo <em>id</em>: quando si clicca su l&#39;ancora, la visualizzazione del documento scorre fino a rendere visibile il<em> tag</em> a cui è stato assegnato l&#39;<em>id.</em></p>
 <h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/hypertext_01.html" target="_blank"><strong>risorse/hypertext_01.html</strong></a> <a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/hypertext_02.html" target="_blank"><strong>risorse/hypertext_02.html</strong></a></h3>
 <table>
 <tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\f6bf1036646e8157.png"></p>
@@ -257,6 +257,8 @@
 <tr><td colspan="1" rowspan="1"><p><em>Figura 6.2 Uso di collegamenti ipertestuali esterni ed interni con il tag `&lt;a&gt;` </em></p>
 </td></tr>
 </table>
+<p>Un attributo importante per il tag `&lt;a&gt;` è <strong><em>target </em></strong>che specifica come aprire il nuovo documento ipertestuale: i principali valori sono: <em>_self </em>(il valore predefinito) che apre il documento nella stessa finestra del browser del documento di partenza, <em>_blank </em>lo apre in un&#39;altra finestra o tab del browser; le opzioni <em>_top</em> e <em>_parent </em>sono di solito simili a <em>_blank</em> tranne quando si usano i <em>frame </em>che non vengono però trattati in questo manuale in quanto danno problemi di usabilità e di sicurezza (e sono infatti &#34;deprecati&#34; in HTML5). </p>
+<p>Il tag `&lt;a&gt;` permette anche l&#39;uso dell&#39;attributo <strong><em>title </em></strong>che viene in generale visualizzato come tooltip di aiuto ma può anche essere utile per migliorare l&#39;accessibilità del documento.</p>
 
 
       </google-codelab-step>
@@ -334,9 +336,11 @@
 <p>Per collegare l&#39;immagine alla mappa, si usa un identificatore, cioè una stringa di caratteri che può essere costruita a piacere ma deve essere unica all&#39;interno del documento. Questo identificatore viene specificato con l&#39;attributo <strong><em>name </em></strong>nel <em>tag  </em>`&lt;map&gt;` e viene poi usato nel tag <em>`&lt;img&gt;</em>` nell&#39;attributo <strong><em>usemap</em></strong>. È importante notare che quando si usa come identificativo si usa la stringa normale mentre quando si usa come riferimento si deve anteporre il carattere ‘#&#39;.</p>
 <p>All&#39;interno della struttura `&lt;map&gt;...&lt;/map&gt;`, si usa il tag <strong>`&lt;area&gt;` </strong>per specificare le regioni che saranno cliccabili. Questo tag ha un&#39;attributo <strong>shape </strong>che indica la forma dell&#39;area (sono possibili tre alternative: &#34;circle&#34;, &#34;rect&#34; e &#34;poly&#34;) e l&#39;attributo <strong>coords</strong> che specifica i punti sull&#39;immagine per delimitare l&#39;area. I punti sono espressi come coppie di numeri interi considerando l&#39;immagine com un piano con il punto 0,0 nell&#39;angolo in alto a sinstra. </p>
 <p>Il formato dei punti nell&#39;attributo <em>coords </em>di un <em>tag `&lt;area&gt;`</em> dipende dallo specifico <em>shape</em></p>
-<p>- per <em>shape=&#34;circle&#34;, </em>nell&#39;attributo <em>coords</em> si deve specificare la coordinata x e la coordinata y del centro e il raggio separati da virgole del cerchio che si vuole indicare come regione cliccabile;</p>
-<p>- per <em>shape=&#34;rect&#34;,  </em>nell&#39;attributo <em>coords</em> si specificano le coordinate x e y dell&#39;angolo in alto a sinistra e dell&#39;angolo in basso a destra del quadrato (separati da virgole) che si vuole indicare come regione cliccable;</p>
-<p>- per <em>shape=&#34;poly&#34;,  </em>si indicano le coordinate x e y dell&#39;elenco dei vertici del poligono che diventerà la regione cliccabile.</p>
+<ul>
+<li>per <em>shape=&#34;circle&#34;, </em>nell&#39;attributo <em>coords</em> si deve specificare la coordinata x e la coordinata y del centro e il raggio separati da virgole del cerchio che si vuole indicare come regione cliccabile;</li>
+<li>per <em>shape=&#34;rect&#34;,  </em>nell&#39;attributo <em>coords</em> si specificano le coordinate x e y dell&#39;angolo in alto a sinistra e dell&#39;angolo in basso a destra del quadrato (separati da virgole) che si vuole indicare come regione cliccable;</li>
+<li>per <em>shape=&#34;poly&#34;,  </em>si indicano le coordinate x e y dell&#39;elenco dei vertici del poligono che diventerà la regione cliccabile.</li>
+</ul>
 <p>Per ogni elemento <em>`&lt;area&gt;`</em> si deve poi specificare con l&#39;attributo <em>href </em>l&#39;elemento di destinazione (si vedano le regole del <em>tag `&lt;a&gt;` </em>viste sopra). È una buona norma favorire l&#39;accessibilità fornendo anche un testo alternativo nell&#39;attributo <em>alt</em>.</p>
 <p>Le figure 9.1 e 9.2 mostrano un esempio di un&#39;immagine di una cartina dell&#39;Europa in cui la regione corrispondente all&#39;Italia è resa cliccabile e si collega ipertestualmente ad un altro documento HTML.</p>
 <h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/mappa.html" target="_blank"><strong>risorse/mappa.html</strong></a> e <a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/italia_mappa.html" target="_blank"><strong>risorse/italia mappa.html</strong></a></h3>
@@ -358,15 +362,60 @@
         <p>Cascading Style Sheet (CSS) è un linguaggio di specifiche per la formattazione grafica. È stato inventanto più o meno contestualmente all&#39;HTML da un collega di Tim Berners-Lee, Håkon Wium Lie,  sempre al CERN (Munro, 2024) per permettere agli autori di documenti HTML un minimo di personalizzazione nelle visualizzazioni dei documenti (Bos, 2016). È però solo nel 2016, con lo standard HTML4, che si finalizza l&#39;idea di una chiara separazione tra la definizione della struttura dei documenti (in HTML) e la specificazione delle modalità di visualizzazione o, in altre parole, lo stile (in CSS). </p>
 <p>Un concetto importante già presente nelle prima versioni di CSS è la nozione di &#34;progressività&#34; nella definizione degli stili: questi sono raggruppati in fogli (sheet) che possono essere specificati in sequenza (<em>cacading</em>) e in caso di conflito (uno stile dichiarato più volte) viene applicata solo l&#39;ultima definizione. Questa regola permette di poter prima definire parametri generali e poi concretizzarli e adattarli ad uno singolo dispositivo, semplicemente riscrivendo quando già specificato precedentemente. In questo modo, la responsabilità di come visualizzare un documento è in parte sulle spalle dell&#39;autore del documento e in parte sulle spalle del browser: nel caso del web, questa caratteristica è importante perché l&#39;autore può non essere sempre consapevole di tutte le caratteristiche dei vari dispositivi su cui il documento sarà visualizzato. </p>
 <p>A differenza di HTML, CSS non è un linguaggio di <em>markup</em>, nel senso che gli stili non vengono applicati direttamente sul testo in formato di annotazione ma è un linguaggio di specifiche che si applicano ai <em>tag</em> HTML e alle loro istanze individuali (cioè ad una specifica annotazione con un <em>tag </em>di un certo tipo all&#39;interno del documento) e a gruppi di istanze (che in CSS vengoni definiti &#34;classi&#34;).</p>
-<p>La struttura tipica delle specifiche di CSS è rappresentata in figura 10.1.  Il <em>tag </em>da definire si trova all&#39;inizio di una riga e le proprietà da modificare (sovrascrivendo i valori precedenti) vengono messe all&#39;interno di parentesi graffe `<strong>{...}`</strong>. Ogni <em>tag </em>ha un insieme predefinito di proprietà (le principali sono descritte nel seguito). Ogni proprietà che si vuole modificare viene elencata in una riga separata seguita dal nuovo valore della proprietà (anche l&#39;insieme dei valori per ogni proprietà è definito a priori). Le coppie proprietà (<em>property</em>) e valore (<em>value</em>) sono separate dal carattere ‘:&#39; e terminate dal carattere ‘;&#39;.</p>
+<p>La struttura tipica delle specifiche di CSS è rappresentata in figura 10.1.  Il <em>tag </em>da definire si trova all&#39;inizio di una riga e le proprietà da modificare (sovrascrivendo i valori precedenti) vengono messe all&#39;interno di parentesi graffe `<strong>{...}`</strong>. Ogni <em>tag </em>ha un insieme predefinito di proprietà (le principali sono descritte nel seguito). Ogni proprietà che si vuole modificare viene elencata separatamente seguita dal nuovo valore della proprietà (anche l&#39;insieme dei valori per ogni proprietà è definito a priori). Le coppie proprietà (<em>property</em>) e valore (<em>value</em>) sono separate dal carattere ‘:&#39; e terminate dal carattere ‘;&#39;.</p>
 <table>
 <tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\2e64535a04c4a103.png"></p>
 </td></tr>
-<tr><td colspan="1" rowspan="1"><p><em>Figura 10.1 Schema di base della specificazione di un tag in CSS</em></p>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 10.1 Schema di base della specificazione di un tag in CSS </em></p>
 </td></tr>
 </table>
-<p>Gli </p>
+<p>Gli stili possono essere collegati ad un documento HTML in tre diversi modi: <em>inline</em>, <em>internal</em> e <em>external. </em></p>
+<p><strong>Inline styles</strong>: sono specifiche di stile applicate direttamente nel <em>tag </em>tramite l&#39;attributo <strong><em>style </em></strong>(nota: la sintassi è quella della figura 10.1 ma senza la menzione al <em>tag</em> né le parentesi graffe). Lo stile si applica all&#39;istanza del <em>tag </em>in cui lo stile è riportato (e non a tutti i <em>tag </em>dello stesso tipo). Un esempio in figura 10.2, in questo caso la porzione di testo &#34;Hello World!&#34; sarà scritta in colore rosso e avrà una dimensione di 24 pixel, il resto delle proprietà le prenderà dagli stili del titolo di primo livello, le altre porzioni di testo annotate con questo <em>tag</em> useranno, se non ulteriormente specificato, le proprietà di default del colore e della grandezza.</p>
+<pre><code>&lt;h1 style=&#34;color: red; font-size: 24px;&#34;&gt;Hello, World!&lt;/h1&gt;                </code></pre>
+<p><em>Figura 10.1  Esempio di uso di inline styles</em></p>
+<p><strong>Internal styles</strong>: le specifiche di stile sono incluse tra i <em>tag </em><strong>`&lt;style&gt; ...&lt;/style&gt;` </strong>nella sezione <em>head</em>. In questo caso, gli stili di definiti per un <em>tag </em>vengono applicate per tutti i <em>tag </em>di quel tipo nel documento (tranne se sono sovrascritte come <em>inline style</em>). Si veda figura 10.2.</p>
+<pre><code>&lt;head&gt;
+...
+&lt;style&gt;
+    h1 {
+     color: red;
+     font-size: 24px;
+    }
+...
+&lt;/style&gt;        </code></pre>
+<p><em>Figura 10.2  Esempio di uso di internal styles</em></p>
+<p><strong>External styles: </strong>sono definiti in un file esterno (di solito con estensione <em>.css</em>) e vengono caricati nel documento HTML usando il <em>tag self-closing </em><strong>`&lt;link&gt;` </strong>l&#39;URL del file nell&#39;attributo <strong><em>href </em></strong>(come per le àncore nel tag `&lt;a&gt;` e `&lt;area&gt;`) e che si tratta di un link ad un CSS nell&#39;attributo <strong><em>rel</em></strong></p>
+<p><strong>.</strong> Si veda la figura 10.3. </p>
+<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/external_styles_esempio.html" target="_blank"><strong>risorse/external_styles_esempio.html</strong></a> </h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   ...
+   &lt;link rel=&#34;stylesheet&#34; href=&#34;styles.css&#34;&gt;
+  ...
+&lt;/head&gt;</code></pre>
+<p><em>Figura 10.3  Esempio di uso di internal styles</em></p>
+<p>In riferimento alla figura 10.3, il file &#34;styles.css&#34; (che in questo caso dovrà trovarsi nella stessa directory del file html), avrà lo stesso formato introdotto sopra per specificare gli stili ai <em>tag </em>(ma senza essere i <em>tag </em>`&lt;style&gt; ... &lt;/style&gt;`. Si veda figura 10.4 e relativi file di esempi.</p>
+<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/external_styles_esempio.css" target="_blank"><strong>risorse/external_styles_esempio.css</strong></a></h3>
+<pre><code>h1 {
+  color: red;
+  font-size: 24px;
+}</code></pre>
+<p><em>Figura 10.3  Esempio di file CSS da inserire come link in documenti HTML</em></p>
+<h2 is-upgraded><strong>Cascading: le regole di priorità nella specificazione degli stili</strong></h2>
+<p>Il termine <em>cascading </em>(che si potrebbe tradurre come &#34;a cascata&#34;) si riferisce alla natura gerarchica del processo di applicazione delle regole di stile. </p>
+<p>La gerarchia delle priorità funziona con tre principi: </p>
+<ul>
+<li><strong>specificità: </strong>le regole più specifiche hanno sempre la precedenza su quelle più generiche: la specificità è fortemente influenzata dall&#39;uso dei selettori che saranno trattati nel prossimo capitolo;</li>
+<li><strong>ordine di apparizione: </strong>a parità di specificità, le regole definite (o caricate) dopo hanno priorità più alta di quelle precedenti: quindi gli stili <em>inline</em> in genere hanno più priorità di quelli <em>internal </em>e di quelli <em>external</em> mentre tra quest&#39;ultimi, l&#39;ordine in cui si posizionano i tag <em>`&lt;link&gt;` </em>e <em>`&lt;style&gt;`</em> nella sezione <em>head</em> è significativa.</li>
+<li><strong>ereditarietà</strong>: le proprietà CSS hanno valori predefiniti che sono usati quando non ci sono regole che li modificano esplicitamente.</li>
+</ul>
 
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Uso dei selettori in CSS" duration="0">
+        
 
       </google-codelab-step>
     
