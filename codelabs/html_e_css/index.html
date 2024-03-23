@@ -334,6 +334,8 @@
 </td></tr>
 </table>
 <p>Per collegare l&#39;immagine alla mappa, si usa un identificatore, cioè una stringa di caratteri che può essere costruita a piacere ma deve essere unica all&#39;interno del documento. Questo identificatore viene specificato con l&#39;attributo <strong><em>name </em></strong>nel <em>tag  </em>`&lt;map&gt;` e viene poi usato nel tag <em>`&lt;img&gt;</em>` nell&#39;attributo <strong><em>usemap</em></strong>. È importante notare che quando si usa come identificativo si usa la stringa normale mentre quando si usa come riferimento si deve anteporre il carattere ‘#&#39;.</p>
+<aside class="warning"><p><strong>Nota:  </strong>un ID è una semplice stringa ma è una buona prassi che sia un nome significativo della sua funzione, in modo da potersi facilmente ricordare a cosa serve. Inoltre, non dovrebbe iniziare con un numero e non dovrebbe contenere spazi, in quanto ad alcuni browser questi aspetti creano problemi nel rendering delle pagine. Alcune convenzioni (come ad esempio BEM), hanno regole più stringenti tra cui (1) l&#39;uso esclusivo dei caratteri Latin (cioè non usare gli accenti o simboli), (2) uso di ‘-&#39; per separare le parole (al posto dello spazio, ad esempio <em>primo-livello</em>), (3) uso di due  ‘_&#39; per separare gli elementi (ad esempio <em>menu__item</em>) e (4) l&#39;uso del singolo ‘_&#39; per i modificatori (ad esempio <em>menu__item_hidden</em>). Per dettagli si veda <a href="https://en.bem.info/methodology/naming-convention" target="_blank">https://en.bem.info/methodology/naming-convention</a> </p>
+</aside>
 <p>All&#39;interno della struttura `&lt;map&gt;...&lt;/map&gt;`, si usa il tag <strong>`&lt;area&gt;` </strong>per specificare le regioni che saranno cliccabili. Questo tag ha un&#39;attributo <strong>shape </strong>che indica la forma dell&#39;area (sono possibili tre alternative: &#34;circle&#34;, &#34;rect&#34; e &#34;poly&#34;) e l&#39;attributo <strong>coords</strong> che specifica i punti sull&#39;immagine per delimitare l&#39;area. I punti sono espressi come coppie di numeri interi considerando l&#39;immagine com un piano con il punto 0,0 nell&#39;angolo in alto a sinstra. </p>
 <p>Il formato dei punti nell&#39;attributo <em>coords </em>di un <em>tag `&lt;area&gt;`</em> dipende dallo specifico <em>shape</em></p>
 <ul>
@@ -362,7 +364,7 @@
         <p>Cascading Style Sheet (CSS) è un linguaggio di specifiche per la formattazione grafica. È stato inventanto più o meno contestualmente all&#39;HTML da un collega di Tim Berners-Lee, Håkon Wium Lie,  sempre al CERN (Munro, 2024) per permettere agli autori di documenti HTML un minimo di personalizzazione nelle visualizzazioni dei documenti (Bos, 2016). È però solo nel 2016, con lo standard HTML4, che si finalizza l&#39;idea di una chiara separazione tra la definizione della struttura dei documenti (in HTML) e la specificazione delle modalità di visualizzazione o, in altre parole, lo stile (in CSS). </p>
 <p>Un concetto importante già presente nelle prima versioni di CSS è la nozione di &#34;progressività&#34; nella definizione degli stili: questi sono raggruppati in fogli (sheet) che possono essere specificati in sequenza (<em>cacading</em>) e in caso di conflito (uno stile dichiarato più volte) viene applicata solo l&#39;ultima definizione. Questa regola permette di poter prima definire parametri generali e poi concretizzarli e adattarli ad uno singolo dispositivo, semplicemente riscrivendo quando già specificato precedentemente. In questo modo, la responsabilità di come visualizzare un documento è in parte sulle spalle dell&#39;autore del documento e in parte sulle spalle del browser: nel caso del web, questa caratteristica è importante perché l&#39;autore può non essere sempre consapevole di tutte le caratteristiche dei vari dispositivi su cui il documento sarà visualizzato. </p>
 <p>A differenza di HTML, CSS non è un linguaggio di <em>markup</em>, nel senso che gli stili non vengono applicati direttamente sul testo in formato di annotazione ma è un linguaggio di specifiche che si applicano ai <em>tag</em> HTML e alle loro istanze individuali (cioè ad una specifica annotazione con un <em>tag </em>di un certo tipo all&#39;interno del documento) e a gruppi di istanze (che in CSS vengoni definiti &#34;classi&#34;).</p>
-<p>La struttura tipica delle specifiche di CSS è rappresentata in figura 10.1.  Il <em>tag </em>da definire si trova all&#39;inizio di una riga e le proprietà da modificare (sovrascrivendo i valori precedenti) vengono messe all&#39;interno di parentesi graffe `<strong>{...}`</strong>. Ogni <em>tag </em>ha un insieme predefinito di proprietà (le principali sono descritte nel seguito). Ogni proprietà che si vuole modificare viene elencata separatamente seguita dal nuovo valore della proprietà (anche l&#39;insieme dei valori per ogni proprietà è definito a priori). Le coppie proprietà (<em>property</em>) e valore (<em>value</em>) sono separate dal carattere ‘:&#39; e terminate dal carattere ‘;&#39;.</p>
+<p>La struttura tipica delle specifiche di CSS è rappresentata in figura 10.1.  Il <em>tag </em>da definire si trova all&#39;inizio di una riga e le proprietà da modificare (sovrascrivendo i valori precedenti) vengono messe all&#39;interno di parentesi graffe `<strong>{...}`</strong>. Ogni <em>tag </em>ha un insieme predefinito di proprietà (le principali sono descritte nel seguito). Ogni proprietà che si vuole modificare viene elencata separatamente seguita dal nuovo valore della proprietà (anche l&#39;insieme dei valori per ogni proprietà è definito a priori). Le coppie proprietà (<em>property</em>) e valore (<em>value</em>) sono separate dal carattere ‘:&#39; e terminate dal carattere ‘;&#39;. </p>
 <table>
 <tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\2e64535a04c4a103.png"></p>
 </td></tr>
@@ -373,7 +375,8 @@
 <p><strong>Inline styles</strong>: sono specifiche di stile applicate direttamente nel <em>tag </em>tramite l&#39;attributo <strong><em>style </em></strong>(nota: la sintassi è quella della figura 10.1 ma senza la menzione al <em>tag</em> né le parentesi graffe). Lo stile si applica all&#39;istanza del <em>tag </em>in cui lo stile è riportato (e non a tutti i <em>tag </em>dello stesso tipo). Un esempio in figura 10.2, in questo caso la porzione di testo &#34;Hello World!&#34; sarà scritta in colore rosso e avrà una dimensione di 24 pixel, il resto delle proprietà le prenderà dagli stili del titolo di primo livello, le altre porzioni di testo annotate con questo <em>tag</em> useranno, se non ulteriormente specificato, le proprietà di default del colore e della grandezza.</p>
 <pre><code>&lt;h1 style=&#34;color: red; font-size: 24px;&#34;&gt;Hello, World!&lt;/h1&gt;                </code></pre>
 <p><em>Figura 10.1  Esempio di uso di inline styles</em></p>
-<p><strong>Internal styles</strong>: le specifiche di stile sono incluse tra i <em>tag </em><strong>`&lt;style&gt; ...&lt;/style&gt;` </strong>nella sezione <em>head</em>. In questo caso, gli stili di definiti per un <em>tag </em>vengono applicate per tutti i <em>tag </em>di quel tipo nel documento (tranne se sono sovrascritte come <em>inline style</em>). Si veda figura 10.2.</p>
+<p><strong>Internal styles</strong>: le specifiche di stile sono incluse tra i<em> tag </em></p>
+<p><strong><em>`&lt;style&gt; ...&lt;/style&gt;` </em></strong>nella sezione <em>head</em>. In questo caso, gli stili di definiti per un <em>tag </em>vengono applicate per tutti i <em>tag </em>di quel tipo nel documento (tranne se sono sovrascritte come <em>inline style</em>). Si veda figura 10.2.</p>
 <pre><code>&lt;head&gt;
 ...
 &lt;style&gt;
@@ -414,7 +417,126 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Uso dei selettori in CSS" duration="0">
+      <google-codelab-step label="Uso dei selettori" duration="0">
+        <p>In CSS, un selettore è uno schema che permette di identificare l&#39;elemento (o gli elementi) all&#39;interno di un documento HTML a cui applicare una regola di stile. </p>
+<p>I selettori sono di vari tipi, i principali, descritti qui sotto sono i seguenti: <em>element selector, universal selector, class selector,ID selector, attribute selector, descendant selector, child selector, adjacent sibling selector, pseudo-classes e pseudo-elements selector</em>.</p>
+<h2 is-upgraded><strong>Elemental selector</strong></h2>
+<p>È il selettore più semplice che abbiamo visto anche nel capitolo precedente. Consiste nel nome di un <em>tag </em>seguito dall&#39;elenco delle coppie proprietà e valore divise dal carattere ‘:&#39; e terminate dal carattere ‘;&#39;  Se a più <em>tag</em> si vogliono applicare gli stessi stili, si possono separare da virgole. (figura 11.1).</p>
+<pre><code>h1 {color: red; }
+h1, h2, h3 {color: red;}</code></pre>
+<p><em>Figura 11.1  Esempio Elemental selector</em></p>
+<p>Gli stili si applicano a tutte le istanze di <em>tag </em>specificati all&#39;interno del documento in cui lo stile è caricato.</p>
+<h2 is-upgraded><strong>Universal selector</strong></h2>
+<p>È un caso particolare del precedente e si riferisce a tutti i <em>tag</em> del documento. Si specifica con il carattere ‘*&#39;. </p>
+<pre><code>* {
+   color: black;
+   text-decoration: underline red;
+}</code></pre>
+<p><em>Figura 11.2. Esempio universal selector</em></p>
+<p>È una buona pratica non usare il selettore universale ma applicare gli stili ai <em>tag</em> più specifici perché il principio dell&#39;ereditarietà spesso sfugge di mano (si veda l&#39;esempio in <a href="https://jsfiddle.net/massimo_zancanaro/utw9smjx/57/" target="_blank">https://jsfiddle.net/massimo_zancanaro/utw9smjx/57/</a>).</p>
+<h2 is-upgraded><strong>Class selector</strong></h2>
+<p>Ogni <em>tag </em>HTML permette l&#39;uso dell&#39;attributo <strong><em>class </em></strong>per identificare un gruppo di istanze <em>tag </em>a cui assegnare delle proprietà specifiche. Il valore dell&#39;attributo è una stringa che segue le stesse regole degli identificatori (si veda sopra capitolo 9). Nell&#39;attributo <strong><em>class </em></strong>si possono elencare più identificativi separati da spazi e la specifica istanza risulterà appartenere a tutti i gruppi/classi elencati.</p>
+<p>In CSS, poi si possono definire gli stili per le diverse classi e, combinando il <em>class selector</em> con l&#39;elemental selector si possono restringere alle sole istanze che appartengono alla classe ma del particolare <em>tag</em>. Nel CSS, per identificare una classe si usa il nome prefisso con il carattere ‘.&#39; (si veda figura 11.3 e <a href="https://jsfiddle.net/massimo_zancanaro/osky9e3L/3/" target="_blank">https://jsfiddle.net/massimo_zancanaro/osky9e3L/3/</a>).</p>
+<pre><code>.classe-1 {
+   color: yellow;
+}
+p.classe-1 {
+  color: red
+}</code></pre>
+<p><em>Figura 11.3. Esempio class selector per la classe classe-1 applicato a tutte le istanze e a tutte le istanze del tag p</em></p>
+<h2 is-upgraded><strong>ID selector</strong></h2>
+<p>HTML permette di aggiungere l&#39;attributo <strong><em>id </em></strong>ad ogni tag (come abbiamo già visto per il tag `&lt;map&gt;` nel capitolo 9) e questo permette, tra le altre cose, di applicare stili appropriati ad ogni singola istanza di <em>tag</em>. Nel CSS ci si riferisce alla specifica istanza usando il nome dell&#39;ID prefisso dal carattere ‘#&#39; (figura 11.4).</p>
+<pre><code>#id_esempio {
+   color: yellow;
+}</code></pre>
+<p><em>Figura 11.4. Esempio id selector </em></p>
+<h2 is-upgraded><strong>attribute selector</strong></h2>
+<p>Permette di selezionare solo le istanze di <em>tag</em> in un documento che hanno un determinato attributo. Sì può specificare la mera presenza dell&#39;attributo (cioè indipendentemente dal valore assegnato) oppure l&#39;attributo con un valore specifico.</p>
+<p>Nell&#39;esempio riportato in figura 11.5, evidenzia i link che si apriranno in un‘altra pagina, cioè quelle con l&#39;attributo <em>target</em> con valore <em>&#34;_blank</em>&#34; con uno sfondo blu scuro, caratteri in grassetto e di colore bianco; la regola successiva invece specifica di usare caratteri con colore rosse per i link che hanno l&#39;attributo <em>alt </em>, indipendentemente dal valore, cioè dal testo usato come alternativa all&#39;immagine. Si può vedere un esempio di applicazione qui: <a href="https://jsfiddle.net/massimo_zancanaro/tpd7naxc/17/" target="_blank">https://jsfiddle.net/massimo_zancanaro/tpd7naxc/17/</a>.  </p>
+<pre><code>a[target=&#34;_blank&#34;] { 
+       color: white;
+       background: darkblue;
+       font-weight: bold;
+}
+a[alt] {
+        color: red;
+}</code></pre>
+<p><em>Figura 11.5. Esempio attribute selector</em>: notare che l&#39;ordine in cui le regole sono scritte è importante, se le si inverte, quella con l&#39;attribute selector  [alt] non viene applicata (ma si veda più avanti)</p>
+<p>È importante osservare in questo caso l&#39;effetto del principio dell&#39;<em>ordine di apparizione </em>nelle regole: se si inverte l&#39;ordine, i link con l&#39;attributo <em>alt </em>e  <em>target</em> a <em>_blank </em>non risulteranno più di colore rosso. In realtà, saranno prima stati resi con colore rosso per effetto della regola di stile per <em>a[alt] </em>ma poi riscritti in bianco per effetto dell&#39;altra regola. Si può agire sulla priorità delle regole, anche senza invertire l&#39;ordine, usando la direttiva <em>!important.</em></p>
+<pre><code>a[alt] {
+        color: red!important;
+}
+
+a[target=&#34;_blank&#34;] {
+        color: white;
+  background: darkblue;
+  font-weight: bold;
+}</code></pre>
+<p><em>Figura 11.6. Esempio attribute selector: anche con l&#39;ordine invertito, si può dare priorità al colore specificato nella regola meno recente, usando la direttiva !important</em></p>
+<h2 is-upgraded><strong>pseudo-classes e pseudo-elements selector</strong></h2>
+<p>In HTML, alcuni <em>tag</em> possono avere diversi stati: ad esempio, un link può essere già stato visitato (<em>visited</em>) oppure no (<em>link</em>). Le <strong><em>pseudo-class </em></strong>sono dei selettori che permettono di applicare gli stili a determinati stati. Sono prefisse da ‘:&#39; e le più frequenti sono:</p>
+<ul>
+<li><strong><em>:link</em></strong> e <strong><em>:visited </em></strong>sono usati per modificare la visualizzazione dei link (rispettivamente prima, durante e dopo che sono stati cliccati); si usa ovviamente solo con il <em>tag `&lt;a&gt;`</em>;</li>
+<li><strong><em>:active</em></strong> applica lo stile quando l&#39;elemento è attivo, di solito quando lo si clicca (di solito si usa per `&lt;a&gt;` e `&lt;button&gt;` ma funziona anche su altri <em>tag</em>);</li>
+<li>:<strong>hover</strong> applica lo stile quando il mouse si sposta sull&#39;elemento; bisogna fare attenzione che la dimensione dell&#39;elemento potrebbe essere più grande di quanto visualizzato (si veda più avanti la discussione sul concetto di <em>box model</em>);</li>
+</ul>
+<p>Se si usano tutti e quattro sul tag `&lt;a&gt;` per controllare la visualizzazione dei link, è importante ricordarsi che <em>a:hover </em>deve essere messo dopo <em>a:link </em>e <em>a:active</em> dopo <em>a:hover.</em></p>
+<p>Si può vedere un esempio in <a href="https://jsfiddle.net/massimo_zancanaro/jfmena4d/24/" target="_blank">https://jsfiddle.net/massimo_zancanaro/jfmena4d/24/</a> </p>
+<p>Un altro insieme di <strong><em>pseudo-class </em></strong>permettono di riferirsi alle istanze di <em>tag </em>a seconda dell&#39;ordine in cui appaiono nel documento:</p>
+<ul>
+<li><strong><em>:first-child</em></strong>, <strong><em>:nth-child(n)</em></strong>, <strong><em>:last-child</em></strong> si riferiscono rispettivamente al primo, al ennesimo (n è un numero che va specificato) e all&#39;ultimo elemento di un gruppo di <em>tag </em>dello stesso tipo (attenzione però che vengono selezionati tutti i first/nth/last di ogni gruppo di <em>tag</em>, inoltre <em>:last-child</em> è selezionato se proprio è l&#39;ultimo elemento del gruppo: vedere l&#39;esempio in <a href="https://jsfiddle.net/massimo_zancanaro/8wskvatm/29/" target="_blank">https://jsfiddle.net/massimo_zancanaro/8wskvatm/29/</a> </li>
+</ul>
+<p>I <strong><em>pseudo-element </em></strong>permettono di specificare determinate parti di un&#39;istanza di un <em>tag</em>, Ad esempio, l&#39;aggiungere contenuto decorativo prima o dopo un <em>tag</em> senza dover modificare il testo o specificare la dimensione della prima lettera. Un uso frequente è quello di poter definire come viene visualizzata la selezione di testo da parte dell&#39;utente. </p>
+<p>I <em>pseudo-element </em>sono prefissi da ‘::&#39; e ovviamente possono essere usati in combinazione ai selettori descritti sopra. I più frequenti sono i seguenti:</p>
+<ul>
+<li><strong>::first-line </strong>applica lo stile solo alla prima riga (di solito si usa con `&lt;p&gt;` o `&lt;div&gt;`);</li>
+<li><strong>::first-letter</strong> applica lo stile solo alla prima lettera ;</li>
+<li><strong>::before </strong>e <strong>::after </strong>applica lo stile prima e dopo il blocco a cui si riferisce: nella visualizzazione appare esattamente come si fosse messo del contenuto aggiuntivo ma non viene modificato il documento;</li>
+<li><strong>::marker </strong>modifica l&#39;elemento di una lista puntata (ma non tutti i browser lo permettono);</li>
+<li><strong>::selection </strong>modifica come viene resa la selezione fatta dall&#39;utente di un pezzo di testo del documento.</li>
+</ul>
+<p>Si può vedere un esempio in  <a href="https://jsfiddle.net/massimo_zancanaro/85gb3ezd/37/" target="_blank">https://jsfiddle.net/massimo_zancanaro/85gb3ezd/37/</a>.</p>
+<h2 is-upgraded><strong>descendant selector, child selector e adjacent sibling selector</strong></h2>
+<p>Questi tre selettori sono un po&#39; più complicati e vengono usati per gestire visualizzazioni complesse. In genere, si possono sostituire con un uso appropriato di <em>class selector </em>e <em>id selector</em>. Il vantaggio di usare questi e che non è richiesto modificare il documento HTML aggiungendo identificatori.</p>
+<ul>
+<li>Il <strong>descendant selector: </strong><strong><em>`&lt;tag1&gt;  &lt;tag2&gt;`</em></strong> si riferisce a tutti gli elementi di tipo <em>tag2 </em>che si trovano all&#39;interno di un gruppo `&lt;tag1&gt;...&lt;/tag1&gt;&#39;;</li>
+<li>Il <strong>child selector: </strong><strong><em>`&lt;tag1&gt; &gt; &lt;tag2&gt;` </em></strong>si riferisce a tutti gli elementi di tipo <em>tag2</em> che sono all&#39;interno di un gruppo `&lt;tag1&gt;` ma solo al primo livello;</li>
+<li>Lo <strong>adjacent sibling selector</strong><strong><em>`&lt;tag1&gt; + &lt;tag2&gt;` </em></strong>si riferisce a tutti gli elementi di tipo <em>tag2</em> che sono allo stesso livello di un elemento di tipo <em>tag1 </em>(non all&#39;interno)</li>
+</ul>
+<p>Si può vedere un esempio in <a href="https://jsfiddle.net/massimo_zancanaro/4se0kLuo/38/" target="_blank">https://jsfiddle.net/massimo_zancanaro/4se0kLuo/38/</a> </p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Proprietà di base" duration="0">
+        <ul>
+<li>CSS units: pixels (px), percentages (%), ems (em), rems (rem), viewport width/height (vw/vh), and more</li>
+<li>Typography: properties for controlling text styling, including font-family, font-size, font-weight, font-style, line-height, text-align, text-decoration, and color.</li>
+<li>Colors and Backgrounds: Cover properties for defining colors (color, background-color) and background styles (background-image, background-repeat, background-position, background-size)</li>
+<li>Box Model: how elements are rendered as rectangular boxes with content, padding, borders, and margins. Teach how to control the dimensions and spacing of elements using properties like width, height, padding, margin, and border</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Impaginazione e  Responsive Design" duration="0">
+        <ul>
+<li>layout techniques for arranging elements on a webpage, such as display property values (block, inline, inline-block, flex, grid), positioning (static, relative, absolute, fixed), and floats.</li>
+<li>design principles and techniques for creating layouts that adapt to different screen sizes and devices. Cover media queries, viewport meta tag, and fluid layout techniques.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Transitions and Animations" duration="0">
+        <ul>
+<li>properties like transition, animation, keyframes, and timing functions (ease, ease-in, ease-out, ease-in-out)</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Introduzione al DOM e all&#39;uso di Javascript" duration="0">
         
 
       </google-codelab-step>
