@@ -362,6 +362,8 @@
     
       <google-codelab-step label="Introduzione a CSS" duration="0">
         <p>Cascading Style Sheet (CSS) è un linguaggio di specifiche per la formattazione grafica. È stato inventanto più o meno contestualmente all&#39;HTML da un collega di Tim Berners-Lee, Håkon Wium Lie,  sempre al CERN (Munro, 2024) per permettere agli autori di documenti HTML un minimo di personalizzazione nelle visualizzazioni dei documenti (Bos, 2016). È però solo nel 2016, con lo standard HTML4, che si finalizza l&#39;idea di una chiara separazione tra la definizione della struttura dei documenti (in HTML) e la specificazione delle modalità di visualizzazione o, in altre parole, lo stile (in CSS). </p>
+<aside class="special"><p><strong>Nota: </strong>In questo manuale, vedremo solo gli aspetti principali di CSS, per una descrizione completa e dettagliata (ma non necessariamente implementata completamente da tutti i browser), si veda la documentazione ufficiale di W3C <a href="https://www.w3.org/TR/css-2023/#intro" target="_blank">https://www.w3.org/TR/css-2023/#intro</a>. </p>
+</aside>
 <p>Un concetto importante già presente nelle prima versioni di CSS è la nozione di &#34;progressività&#34; nella definizione degli stili: questi sono raggruppati in fogli (sheet) che possono essere specificati in sequenza (<em>cacading</em>) e in caso di conflito (uno stile dichiarato più volte) viene applicata solo l&#39;ultima definizione. Questa regola permette di poter prima definire parametri generali e poi concretizzarli e adattarli ad uno singolo dispositivo, semplicemente riscrivendo quando già specificato precedentemente. In questo modo, la responsabilità di come visualizzare un documento è in parte sulle spalle dell&#39;autore del documento e in parte sulle spalle del browser: nel caso del web, questa caratteristica è importante perché l&#39;autore può non essere sempre consapevole di tutte le caratteristiche dei vari dispositivi su cui il documento sarà visualizzato. </p>
 <p>A differenza di HTML, CSS non è un linguaggio di <em>markup</em>, nel senso che gli stili non vengono applicati direttamente sul testo in formato di annotazione ma è un linguaggio di specifiche che si applicano ai <em>tag</em> HTML e alle loro istanze individuali (cioè ad una specifica annotazione con un <em>tag </em>di un certo tipo all&#39;interno del documento) e a gruppi di istanze (che in CSS vengoni definiti &#34;classi&#34;).</p>
 <p>La struttura tipica delle specifiche di CSS è rappresentata in figura 10.1.  Il <em>tag </em>da definire si trova all&#39;inizio di una riga e le proprietà da modificare (sovrascrivendo i valori precedenti) vengono messe all&#39;interno di parentesi graffe `<strong>{...}`</strong>. Ogni <em>tag </em>ha un insieme predefinito di proprietà (le principali sono descritte nel seguito). Ogni proprietà che si vuole modificare viene elencata separatamente seguita dal nuovo valore della proprietà (anche l&#39;insieme dei valori per ogni proprietà è definito a priori). Le coppie proprietà (<em>property</em>) e valore (<em>value</em>) sono separate dal carattere ‘:&#39; e terminate dal carattere ‘;&#39;. </p>
@@ -371,6 +373,7 @@
 <tr><td colspan="1" rowspan="1"><p><em>Figura 10.1 Schema di base della specificazione di un tag in CSS </em></p>
 </td></tr>
 </table>
+<p>I commenti in CSS si indicano con l&#39;annotazione <strong>`/* ... */`</strong>. </p>
 <p>Gli stili possono essere collegati ad un documento HTML in tre diversi modi: <em>inline</em>, <em>internal</em> e <em>external. </em></p>
 <p><strong>Inline styles</strong>: sono specifiche di stile applicate direttamente nel <em>tag </em>tramite l&#39;attributo <strong><em>style </em></strong>(nota: la sintassi è quella della figura 10.1 ma senza la menzione al <em>tag</em> né le parentesi graffe). Lo stile si applica all&#39;istanza del <em>tag </em>in cui lo stile è riportato (e non a tutti i <em>tag </em>dello stesso tipo). Un esempio in figura 10.2, in questo caso la porzione di testo &#34;Hello World!&#34; sarà scritta in colore rosso e avrà una dimensione di 24 pixel, il resto delle proprietà le prenderà dagli stili del titolo di primo livello, le altre porzioni di testo annotate con questo <em>tag</em> useranno, se non ulteriormente specificato, le proprietà di default del colore e della grandezza.</p>
 <pre><code>&lt;h1 style=&#34;color: red; font-size: 24px;&#34;&gt;Hello, World!&lt;/h1&gt;                </code></pre>
@@ -484,7 +487,7 @@ a[target=&#34;_blank&#34;] {
 <p>Si può vedere un esempio in <a href="https://jsfiddle.net/massimo_zancanaro/jfmena4d/24/" target="_blank">https://jsfiddle.net/massimo_zancanaro/jfmena4d/24/</a> </p>
 <p>Un altro insieme di <strong><em>pseudo-class </em></strong>permettono di riferirsi alle istanze di <em>tag </em>a seconda dell&#39;ordine in cui appaiono nel documento:</p>
 <ul>
-<li><strong><em>:first-child</em></strong>, <strong><em>:nth-child(n)</em></strong>, <strong><em>:last-child</em></strong> si riferiscono rispettivamente al primo, al ennesimo (n è un numero che va specificato) e all&#39;ultimo elemento di un gruppo di <em>tag </em>dello stesso tipo (attenzione però che vengono selezionati tutti i first/nth/last di ogni gruppo di <em>tag</em>, inoltre <em>:last-child</em> è selezionato se proprio è l&#39;ultimo elemento del gruppo: vedere l&#39;esempio in <a href="https://jsfiddle.net/massimo_zancanaro/8wskvatm/29/" target="_blank">https://jsfiddle.net/massimo_zancanaro/8wskvatm/29/</a> </li>
+<li><strong><em>:first-child</em></strong>, <strong><em>:nth-child(n)</em></strong>, <strong><em>:last-child</em></strong> si riferiscono rispettivamente al primo, al ennesimo (n è un numero che va specificato) e all&#39;ultimo elemento di un gruppo di <em>tag </em>dello stesso tipo (attenzione però che vengono selezionati tutti i first/nth/last di ogni gruppo di <em>tag</em>, inoltre <em>:last-child</em> è selezionato se proprio è l&#39;ultimo elemento del gruppo: vedere l&#39;esempio in <a href="https://jsfiddle.net/massimo_zancanaro/8wskvatm/latest/" target="_blank">https://jsfiddle.net/massimo_zancanaro/8wskvatm/latest/</a>  </li>
 </ul>
 <p>I <strong><em>pseudo-element </em></strong>permettono di specificare determinate parti di un&#39;istanza di un <em>tag</em>, Ad esempio, l&#39;aggiungere contenuto decorativo prima o dopo un <em>tag</em> senza dover modificare il testo o specificare la dimensione della prima lettera. Un uso frequente è quello di poter definire come viene visualizzata la selezione di testo da parte dell&#39;utente. </p>
 <p>I <em>pseudo-element </em>sono prefissi da ‘::&#39; e ovviamente possono essere usati in combinazione ai selettori descritti sopra. I più frequenti sono i seguenti:</p>
@@ -495,7 +498,7 @@ a[target=&#34;_blank&#34;] {
 <li><strong>::marker </strong>modifica l&#39;elemento di una lista puntata (ma non tutti i browser lo permettono);</li>
 <li><strong>::selection </strong>modifica come viene resa la selezione fatta dall&#39;utente di un pezzo di testo del documento.</li>
 </ul>
-<p>Si può vedere un esempio in  <a href="https://jsfiddle.net/massimo_zancanaro/85gb3ezd/37/" target="_blank">https://jsfiddle.net/massimo_zancanaro/85gb3ezd/37/</a>.</p>
+<p>Si può vedere un esempio in  <a href="https://jsfiddle.net/massimo_zancanaro/85gb3ezd/latest/" target="_blank">https://jsfiddle.net/massimo_zancanaro/85gb3ezd/latest/</a></p>
 <h2 is-upgraded><strong>descendant selector, child selector e adjacent sibling selector</strong></h2>
 <p>Questi tre selettori sono un po&#39; più complicati e vengono usati per gestire visualizzazioni complesse. In genere, si possono sostituire con un uso appropriato di <em>class selector </em>e <em>id selector</em>. Il vantaggio di usare questi e che non è richiesto modificare il documento HTML aggiungendo identificatori.</p>
 <ul>
@@ -503,24 +506,70 @@ a[target=&#34;_blank&#34;] {
 <li>Il <strong>child selector: </strong><strong><em>`&lt;tag1&gt; &gt; &lt;tag2&gt;` </em></strong>si riferisce a tutti gli elementi di tipo <em>tag2</em> che sono all&#39;interno di un gruppo `&lt;tag1&gt;` ma solo al primo livello;</li>
 <li>Lo <strong>adjacent sibling selector</strong><strong><em>`&lt;tag1&gt; + &lt;tag2&gt;` </em></strong>si riferisce a tutti gli elementi di tipo <em>tag2</em> che sono allo stesso livello di un elemento di tipo <em>tag1 </em>(non all&#39;interno)</li>
 </ul>
-<p>Si può vedere un esempio in <a href="https://jsfiddle.net/massimo_zancanaro/4se0kLuo/38/" target="_blank">https://jsfiddle.net/massimo_zancanaro/4se0kLuo/38/</a> </p>
+<p>Si può vedere un esempio in <a href="https://jsfiddle.net/massimo_zancanaro/4se0kLuo/latest/" target="_blank">https://jsfiddle.net/massimo_zancanaro/4se0kLuo/latest/</a>  </p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Proprietà di base" duration="0">
-        <ul>
-<li>CSS units: pixels (px), percentages (%), ems (em), rems (rem), viewport width/height (vw/vh), and more</li>
-<li>Typography: properties for controlling text styling, including font-family, font-size, font-weight, font-style, line-height, text-align, text-decoration, and color.</li>
-<li>Colors and Backgrounds: Cover properties for defining colors (color, background-color) and background styles (background-image, background-repeat, background-position, background-size)</li>
-<li>Box Model: how elements are rendered as rectangular boxes with content, padding, borders, and margins. Teach how to control the dimensions and spacing of elements using properties like width, height, padding, margin, and border</li>
+        <p>In questo capitolo vengono illustrate le proprietà più usate di CSS e l&#39;uso dei colori.  Per una lista completa, si può vedere qui: <a href="https://www.w3.org/TR/css-2023/#properties" target="_blank">https://www.w3.org/TR/css-2023/#properties</a> </p>
+<h2 is-upgraded><strong>Misurare le lunghezze</strong></h2>
+<p>In CSS, è spesso necessario esprimere misure di lunghezza per gli aspetti legati all&#39;impaginazione e alle dimensioni dei caratteri. Ci sono due tipo di misure di lunghezza: le misure assolute e le misure relative. </p>
+<p>Le misure assolute comprendono i centimetri (<em>cm</em>), i millimetri (<em>mm</em>), i pollici (<em>in</em>),  i pixel (<em>px</em>) , i punti (<em>pt) </em>che sono una misura tipica della tipografia tradizionale ed equivalgono ad 1/72 di pollice e i picas (<em>pc</em>) che sono 12 punti. Le misure assolute sono utili quando si vuole avere un&#39;alta precisione e quando si prepara un documento per la stampa ma si adattano male ai diversi dispositivi portando a problemi di usabilità e di accessibilità.</p>
+<p>Le misure relative sono in generale da preferirsi quando si lavoro sul web e comprendono la percentuale <em>(%</em>) dell&#39;elemento che contiene quello in cui si specificano le misure, la percentuale del <em>viewport</em> (cioè della finestra in cui è visualizzato il documento) in orizzontale (<em>viewport width, vw</em>) e in verticale (<em>viewport height, vh</em>), e <em>em </em>è la proporzione con l&#39;altezza del carattere dell&#39;elemento (ce ne sono altre ma meno comuni).</p>
+<h2 is-upgraded><strong>Uso dei colori</strong></h2>
+<p>I colori si specificano con le proprietà <strong><em>color </em></strong>e <strong><em>background-color </em></strong>presenti nella maggior parte dei <em>tag</em>. </p>
+<p>CSS usa il modello modello di colore RGB e i singoli colori si possono specificare usando i codici esadecimali per la percentuale di rosso, verde e blu (ad esempio <strong><em>#ff0000</em></strong> corrisponde al rosso, <strong><em>#00ff00 </em></strong>al verde e così via), oppure specificando la funzione <strong>rgb(r,g,b)</strong> con r,g,b valori interi in decimale  tra 0 e 255 per i tre colori (esiste anche la funzione <strong><em>rgba(r,g,b,a)</em></strong> dove il quarto valore corrisponde all&#39;opacità (<em>alpha</em>) espressa come percentuale tra 0% (colore totalmente trasparente) e 100% (totalmente opaco).  Si possono anche specificare i colori usando le coordinate cilindriche HSL usando la funzione <strong><em>hsl(h,s,l) </em></strong>dove il primo valore è la tinta (<em>hue</em>) e si esprime come intero decimale tra 0 e 360 (0  equivale al rosso, 120 al verde e 240 al blu), il secondo è una percentuale che definisce la saturazione (da grigio a colore pieno) e il terzo è una percentuale che definisce la quantità di luce (da nero a bianco). Anche per HSL esiste la funzione che include anche l&#39;opacità <strong><em>hsla</em></strong>.</p>
+<p>Nelle specifiche di CSS vengono anche definiti 140 nomi dei colori più usati, tra cui <em>red, green, yellow, blue</em>, <em>orange</em>, e gli equivalenti più chiari <em>lightred, lightgreen</em> eccetera e più scuri <em>darkred, darkgreen </em>eccetera. Un elenco completo lo si può trovare in <a href="https://www.w3schools.com/colors/colors_names.asp" target="_blank">https://www.w3schools.com/colors/colors_names.asp</a> </p>
+<h2 is-upgraded><strong>Principali proprietà tipografiche</strong></h2>
+<p>Le proprietà tipografiche sono quelle relative agli stili dei caratteri:</p>
+<ul>
+<li><em>font-family</em>: specifica il tipo di caratteri da utilizzare, può essere un tipo specifico (come Arial, Times New Roman, ..) oppure una famiglia generica (<em>serif, sans-serif, monospace, ...)</em>; si possono specificare più alternative in ordine di preferenza e separate da virgole;</li>
+<li><em>font-size</em>: specifica la dimensione del carattere, può essere espressa come misura assoluta o relativa (si veda sopra), oppure in modo simbolico assoluto (<em>xxx-large, xx-large, x-large, large, medium, small, x-small, xx-small</em>) o ancora in modo simbolico relativo (<em>larger, smaller);</em></li>
+<li><em>font-weight: </em>specifica il tratto del carattere può essere specificato in modo simbolico usando i valori <em>normal, bold, bolder, lighter </em>ma non tutte le famiglie hanno tutte le alternative;</li>
+<li><em>font-style: </em>specifica lo stile del carattere <em>normal, italic, oblique </em>(per molte font, italic e oblique sono uguali);</li>
+<li><em>text-decoration:  </em>specifica ulteriori modifiche al testo <em>underline</em>, <em>overline</em>, <em>line-through </em>e il valore predefinito è <em>none;</em></li>
+<li><em>text-transform</em>: modifica i caratteri <em>normal, uppercase, lowercase, capitalize;</em></li>
 </ul>
+<p>E quelle relative all&#39;allineamento sulla riga:</p>
+<ul>
+<li><em>text-indent: </em>specifica l&#39;indentazione, ovvero la rientranza della prima riga del paragrafo.</li>
+<li><em>text-align: </em>specifica l&#39;allineamento rispetto ai margini: <em>center, left, right, justify</em></li>
+<li><em>line-height: </em>specifica la distanza tra le righe;</li>
+<li><em>letter-spacing, word-spacing</em>: specifica la distanza tra, rispettivamente, le lettere e le parole; </li>
+<li><em>white-space: </em>specifica se andare a capo <em>normal </em>o no <em>nowarp </em>(ci sono altre opzioni più complesse che qui non vediamo)</li>
+</ul>
+<p>Si veda un esempio qui: <a href="https://jsfiddle.net/massimo_zancanaro/y3o7esu0/latest/" target="_blank">https://jsfiddle.net/massimo_zancanaro/y3o7esu0/latest/</a> </p>
+<h2 is-upgraded><strong>Proprietà di liste e tabelle</strong></h2>
+<p><strong>[DA COMPLETARE]</strong></p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Impaginazione e  Responsive Design" duration="0">
-        <ul>
+        <p>L&#39;idea di base della distinzione tra HTML e CSS è di separare la descrizione della struttura di un documento (fatta in HTML) dalla gestione della sua visualizzazione (definita in CSS). Finora, abbiamo visto che con CSS si possono definire stili specifici per rendere i caratteri sulle righe e le principali strutture HTML. Il problema maggiore per visualizzare i documenti però resta quello dell&#39;impaginazione, cioè come gestire gli spazi e il posizionamento dei vari elementi nello spazio bidimensionale della pagina. Per le pagine web, c&#39;è l&#39;ulteriore complicazione che i dispositivi hanno dimensioni diverse e lo stesso documento potrebbe dover essere visualizzato in modi anche molto diversi. Il termine <em>responsive design</em> indica una serie di strategie e tecniche per definire nel modo più generale possibile (cioè in modo indipendente dalle proprietà degli specifici device) i vincoli della visualizzaione del documento.</p>
+<h2 is-upgraded><strong>Il concetto di Box Model</strong></h2>
+<p>Ogni <em>tag </em>HTML è reso graficamente come una scatola divisa in varie parti (<strong><em>box model</em></strong>) come modo illustrato in figura 13.1:</p>
+<ul>
+<li>lo spazio più interno, detto <em>content</em>, è dove viene visualizzato il testo o l&#39;immagine del <em>tag</em>; quando si definiscono la larghezza (proprietà <strong><em>width</em></strong>) e l&#39;altezza (proprietà <strong><em>height</em></strong>) di un <em>tag</em> il riferimento è solamente al <em>content;</em></li>
+<li>il <em>padding </em>è uno spazio vuoto che serve a distanziare l&#39;elemento dal suo (eventuale) bordo; il colore di background si applica sia allo spazio del <em>content </em>che a quello del <em>padding</em>; la dimensione di questo spazio si modifica con le proprietà <strong><em>padding-top, padding-bottom, padding-left, padding-right</em></strong> oppure la proprietà generale <strong><em>padding </em></strong>specificando nell&#39;ordine e senza virgole <em>top, right, bottom, left </em>oppure un singolo valore per tutti e quattro (se ci sono tre valori vengono interpretati come <em>top, left/right, bottom</em> e se sono due come <em>top/bottom, left/right</em>) </li>
+<li>il <em>border </em>è il bordo interno all&#39;elemento, la configurazione predefinita è che abbia spesso 0 ma si può cambiare usando la proprietà <strong><em>border-width </em></strong>(oppure <strong><em>border-top-width, border-bottom-width, border-left-width, border-right-width </em></strong>per avere dimensioni diverse); si può in modo simile definire lo stile del tratto con <strong><em>border-style </em></strong>(o <strong><em>border-top-style, border-bottom-style, border-left-style, border-right-style</em></strong>) che può essere <em>solid, dash, dotted, </em>o <em>double</em>; e il colore del tratto con la proprietà <strong><em>border-color </em></strong>(o <strong><em>border-top-color, border-bottom-color, border-left-color, border-right-color</em></strong><strong>)</strong>; si può anche usare la proprietà generale <strong><em>border </em></strong>coni tre parametri di larghezza, tratto e colore non separati da virgole;</li>
+<li>infine, il <em>margin </em>è lo spazio più esterno che distanza l&#39;elemento dagli elementi vicini e non viene impattato dal colore di sfondo; anche in questo caso si può definire la dimensione con <strong><em>margin-top, margin-bottom, margin-left, margin-right </em></strong>oppure con la proprietà generale <strong><em>margin </em></strong>in modo analogo a <em>padding.</em></li>
+</ul>
+<p>Alcuni esempi sono riportati in <a href="https://jsfiddle.net/massimo_zancanaro/sr7Lj0q9/latest" target="_blank">https://jsfiddle.net/massimo_zancanaro/sr7Lj0q9/latest</a>  </p>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\2830d8289ccbe843.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 13.1. Visualizzazione del Box Model per gestire la resa grafica di ogni elemento HTML.</em></p>
+</td></tr>
+</table>
+<p>È importante ricordare che la dimensione orizzontale di un elemento non è determinato dalle sola proprietà <em>width </em>che si applica al solo <em>content</em> ma dalla somma di questa più due volte le dimensioni del <em>border</em> e del <em>padding </em>di sinistra, le dimensioni del <em>border </em>e del <em>padding </em>a destra; in modo simile si calcola la dimensione verticale considerano la <em>height</em> del <em>content </em>più il top e il bottom di <em>border </em>e <em>padding</em>. Per calcolare inoltre la quantità totale di spazio occupato dall&#39;elemento, bisogna considerare anche gli spazi in alto, in basso, a destra e a sinistra del <em>margin</em>.</p>
+<h2 is-upgraded><strong>Le tecniche di impaginazione per il responsive design</strong></h2>
+<p>In HTML (e quindi in CSS) ci sono due tipi principali di <em>box</em> per gli elementi, quelli che creano un blocco (<em>block</em>) che inizia sempre da una nuova riga e occupa tutto lo spazio disponibile e quelli che invece sono visualizzati all&#39;interno di una riga (<em>inline</em>) e occupando solo lo spazio necessario (esiste anche la proprietà <em>inline-block </em>che visualizza l&#39;elemento sulla riga ma permette di occupare internamento lo spazio specificato). </p>
+<p>Gli elementi di tipo <em>block</em> sono <em>`&lt;div&gt;`, `&lt;p&gt;`,  </em>`&lt;li&gt;`, <em>...</em>mentre quelli <em>inline </em>sono `&lt;span&gt;`, `&lt;a&gt;`, `&lt;img&gt;`, ... La proprietà <strong><em>display </em></strong>è in genere predefinita ma la si può modificare per variare il comportamento di un elemento, ad esempio per avere liste puntate orizzontali invece che verticali (cambiando il <em>display </em>dell&#39;elemento <em>li </em>da <em>block </em>a <em>inline</em>). </p>
+<p>Oppure si può settare al valore <em>none </em>per eliminare l&#39;elemento dalla visualizzazione: in questo caso, l&#39;elemento non verrà visualizzato ma sarà comunque presente nel documento e quindi manipolabile da Javascript come si vedrà in seguito (si noti che tutti gli elementi HTML hanno anche la proprietà <strong><em>visibility </em></strong>che è predefinita a <em>visible </em>ma può essere messa a <em>hidden</em> per nascondere l&#39;elemento: però <em>display none </em>è diverso dalla proprietà a <em>hidden </em>perché quest&#39;ultima rende l&#39;elemento non visibile ma occupa ancora lo spazio definito dal <em>box model </em>mentre <em>display none </em>rimuove l&#39;elemento dalla visualizzazione e quindi lo spazio è disponibile per gli altri elementi). Si vedano alcuni esempi in </p>
+<p>Il modello più semplice (e meno efficace da usare per impaginazioni <em>responsive</em>) </p>
+<ul>
 <li>layout techniques for arranging elements on a webpage, such as display property values (block, inline, inline-block, flex, grid), positioning (static, relative, absolute, fixed), and floats.</li>
 <li>design principles and techniques for creating layouts that adapt to different screen sizes and devices. Cover media queries, viewport meta tag, and fluid layout techniques.</li>
 </ul>
@@ -528,16 +577,18 @@ a[target=&#34;_blank&#34;] {
 
       </google-codelab-step>
     
-      <google-codelab-step label="Transitions and Animations" duration="0">
+      <google-codelab-step label="Definire animazioni in CSS" duration="0">
         <ul>
 <li>properties like transition, animation, keyframes, and timing functions (ease, ease-in, ease-out, ease-in-out)</li>
 </ul>
+<p><strong>[DA COMPLETARE]</strong></p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Introduzione al DOM e all&#39;uso di Javascript" duration="0">
-        
+        <p><strong>[DA COMPLETARE]</strong></p>
+
 
       </google-codelab-step>
     
