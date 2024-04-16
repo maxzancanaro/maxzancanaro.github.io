@@ -1,0 +1,22 @@
+
+h1 {
+    background-color: orange;
+    color: darkorchid;
+    text-align: center;
+}
+
+h2 {
+    color: orange
+}
+
+span {
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+

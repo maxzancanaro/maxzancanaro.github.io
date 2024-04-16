@@ -1,0 +1,27 @@
+
+h1 {
+    color: darkorchid;;
+    text-align: center;
+}
+
+h2 {
+    color: violet;
+}
+
+span {
+    font-weight: bold;
+    color: yellow;
+    font-variant: all-caps;
+}
+
+div {
+    color: white;
+    background-color: darkorchid;
+}
+
+th {
+    background-color: darkorchid;
+    text-align: center;
+    vertical-align: top;
+}
+
