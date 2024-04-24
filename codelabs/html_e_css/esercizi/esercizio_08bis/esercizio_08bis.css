@@ -1,0 +1,52 @@
+
+#contenitore {
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+	justify-content: space-evenly;
+    width:600;
+    width: 80%;
+    height: 400px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+#contenitoreContatore {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: 40px;
+    border-radius: 20px;
+    background-color: lightblue;
+    margin: 20px;
+    padding: 5px;
+}
+
+
+#contenitoreConsole {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    font-size: 40px;
+    border-radius: 20px;
+    background-color: lightblue;
+    margin: 20px;
+    padding: 5px;
+}
+
+#contatore {
+    background-color: lightgray;
+    font-size: 60px;
+    margin-left: 10px;
+}
+
+.operazione {
+    font-size: 60;
+    margin-left: 50px;
+    margin-right: 50px;   
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrazione JS esempio</title>
+    
+    <script>
+    function aggiungiLista() {
+
+      // Crea un nuovo elemento unordered list
+      var newList = document.createElement("ul");
+
+      // crea 5 list item e aggiungili come children alla lista
+      for (var i = 1; i <= 5; i++) {
+        var listItem = document.createElement("li");
+        listItem.textContent = "Item " + i;
+        newList.appendChild(listItem);
+      }
+
+      // Aggiungi la lista al documento
+      var container = document.getElementById("contenitoreLista");
+      container.appendChild(newList);
+    }
+
+    </script>
+
+</head>
+<body>
+
+    <div id="contenitoreLista">
+        <div><a href="#" onclick="aggiungiLista()">clicca qui</a> per aggiungere una lista</div>
+    </div>
+
+</body>
+</html>
