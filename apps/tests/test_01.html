@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="test_01.js"></script>
     <title>Test 01</title>
 </head>
 <body>
 
 <div class="h-screen bg-lime-100 px-4">
 <div>Test di Tailwind responsive design</div>
+
+<div class="m-5 columns-2">
+    <div class="px-4 bg-violet-100">height=<span id="window_height">??</span></div>
+    <div class="px-4 bg-violet-100">width=<span id="window_width">??</span></div>
+</div>
 
 <div class="m-5 grid gap-2 grid-cols-2 grid-rows-3">
     <div class="sm:font-bold bg-violet-100 text-center">sm</div>
