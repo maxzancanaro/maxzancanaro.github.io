@@ -1,16 +1,12 @@
 
-let windowWidth = window.innerWidth;
-let windowHeight = window.innerHeight;
-
-window.addEventListener("resize", function() {
-    windowWidth = window.innerWidth;
-    windowHeight = window.innerHeight;
-});
-
-window.addEventListener("load", (event) => {
+function visualizzaRisoluzione () {
     elementWidth = document.getElementById("window_width")
     elementHeight = document.getElementById("window_height")
 
-    elementHeight.textContent = windowHeight;
-    elementWidth.textContent = windowWidth;
-});
+    elementWidth.textContent = window.innerWidth;
+    elementHeight.textContent = window.innerHeight;
+}
+
+window.addEventListener("resize", visualizzaRisoluzione);
+
+window.addEventListener("load", visualizzaRisoluzione);

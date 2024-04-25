@@ -10,22 +10,44 @@
 <body>
 
 <div class="h-screen bg-lime-100 px-4">
-<div>Test di Tailwind responsive design</div>
 
-<div class="m-5 columns-2">
-    <div class="px-4 bg-violet-100">height=<span id="window_height">??</span></div>
-    <div class="px-4 bg-violet-100">width=<span id="window_width">??</span></div>
+<div class="text-xl">Test di Tailwind responsive design</div>
+
+<div class="m-5 w-fit">
+    <div class="px-4 my-1 w-fit bg-violet-100">height=<span id="window_height">??</span></div>
+    <div class="px-4 my-1 w-fit bg-violet-100">width=<span id="window_width">??</span></div>
 </div>
 
-<div class="m-5 grid gap-2 grid-cols-2 grid-rows-3">
-    <div class="sm:font-bold bg-violet-100 text-center">sm</div>
-    <div class="md:font-bold bg-violet-100 text-center">md</div>
-    <div class="lg:font-bold bg-violet-100 text-center">lg</div>
-    <div class="xl:font-bold bg-violet-100 text-center">xl</div>
-    <div class="2xl:font-bold bg-violet-100 text-center">2xl</div>
-    <div class="font-bold bg-violet-100 text-center">test</div>
+<div class="table m-5 bg-zinc-200">
+    <div class="table-header-group bg-zinc-200">
+        <div class="table-row">
+            <div class="table-cell px-4 text-left">Breakpoint</div>
+            <div class="table-cell px-4 text-left">Min width</div>
+        </div>
+    </div>
+    <div class="table-row-group bg-zinc-100">
+        <div class="table-row">
+            <div class="table-cell px-4 text-left sm:font-bold">sm</div>
+            <div class="table-cell px-4 text-left">640px</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell px-4 text-left md:font-bold">md</div>
+            <div class="table-cell px-4 text-left">768px</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell px-4 text-left lg:font-bold">lg</div>
+            <div class="table-cell px-4 text-left">1024px</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell px-4 text-left xl:font-bold">xl</div>
+            <div class="table-cell px-4 text-left">1280px</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell px-4 text-left 2xl:font-bold">2xl</div>
+            <div class="table-cell px-4 text-left">1536px</div>
+        </div>
+    </div>
 </div>
-
 
 
 </body>
