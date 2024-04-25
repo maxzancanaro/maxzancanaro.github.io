@@ -1,4 +1,4 @@
-var contatore=0;
+let contatore=0;
 
 function incr() {
     contatore++;

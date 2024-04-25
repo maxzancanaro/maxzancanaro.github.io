@@ -9,17 +9,17 @@
     function aggiungiLista() {
 
       // Crea un nuovo elemento unordered list
-      var newList = document.createElement("ul");
+      let newList = document.createElement("ul");
 
       // crea 5 list item e aggiungili come children alla lista
-      for (var i = 1; i <= 5; i++) {
-        var listItem = document.createElement("li");
+      for (let i = 1; i <= 5; i++) {
+        let listItem = document.createElement("li");
         listItem.textContent = "Item " + i;
         newList.appendChild(listItem);
       }
 
       // Aggiungi la lista al documento
-      var container = document.getElementById("contenitoreLista");
+      let container = document.getElementById("contenitoreLista");
       container.appendChild(newList);
     }
 
