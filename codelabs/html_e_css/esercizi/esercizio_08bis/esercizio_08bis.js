@@ -1,31 +1,33 @@
 let contatore=0;
 
 function incr() {
+    let element = document.getElementById("contatore");
+
     contatore++;
     
-    element = document.getElementById("contatore");
-
     if ( contatore >= 0 ) {
         element.style.color = "#000000";
     } 
-    element.innerHTML = contatore;
+    element.textContent = contatore;
 };
 
 function decr() {
-    contatore--;
+    let element = document.getElementById("contatore");
 
-    element = document.getElementById("contatore");
+    contatore--;
 
     if ( contatore < 0 ) {
         element.style.color = "#ff0000";
     } 
-    element.innerHTML = contatore;
+    element.textContent = contatore;
 
 };
 
 
 function cancella() {
+    let element = document.getElementById("contatore");
+
     contatore=0;
-    document.getElementById("contatore").innerHTML = contatore;
+    element.textContent = contatore;
     element.style.color = "#000000";
 };
