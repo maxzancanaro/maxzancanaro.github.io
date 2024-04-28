@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tw_test_breakpoints.js"></script>
+    <title>Test breakpoints TW</title>
+</head>
+<body>
+
+<div class="h-screen bg-orange-50 px-4">
+
+<div class="text-xl">Esempio dei breakpoint (responsive design) di Tailwind</div>
+
+<div class="m-5 w-fit">
+    <div class="px-4 my-1 w-fit bg-violet-100">height=<span id="window_height">??</span></div>
+    <div class="px-4 my-1 w-fit bg-violet-100">width=<span id="window_width">??</span></div>
+</div>
+
+<div class="table m-5 ">
+    <div class="table-header-group bg-zinc-500 text-zinc-50">
+        <div class="table-row">
+            <div class="table-cell px-4 text-left">Breakpoint</div>
+            <div class="table-cell px-4 text-left">Min width</div>
+        </div>
+    </div>
+    <div class="table-row-group" >
+        <div class="table-row even:bg-zinc-50 odd:bg-zinc-200 text-zinc-700">
+            <div class="table-cell px-4 text-left sm:font-bold">sm</div>
+            <div class="table-cell px-4 text-center">640px</div>
+        </div>
+        <div class="table-row even:bg-zinc-50 odd:bg-zinc-200 text-zinc-700">
+            <div class="table-cell px-4 text-left md:font-bold">md</div>
+            <div class="table-cell px-4 text-center">768px</div>
+        </div>
+        <div class="table-row even:bg-zinc-50 odd:bg-zinc-200 text-zinc-700">
+            <div class="table-cell px-4 text-left lg:font-bold">lg</div>
+            <div class="table-cell px-4 text-center">1024px</div>
+        </div>
+        <div class="table-row even:bg-zinc-50 odd:bg-zinc-200 text-zinc-700">
+            <div class="table-cell px-4 text-left xl:font-bold">xl</div>
+            <div class="table-cell px-4 text-center">1280px</div>
+        </div>
+        <div class="table-row even:bg-zinc-50 odd:bg-zinc-200 text-zinc-700">
+            <div class="table-cell px-4 text-left 2xl:font-bold">2xl</div>
+            <div class="table-cell px-4 text-center">1536px</div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
