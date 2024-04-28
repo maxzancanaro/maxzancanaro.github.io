@@ -39,11 +39,12 @@ window.addEventListener("load", (event) => {
     document.getElementById("uguale").addEventListener("click", (event) => {
         try {
            espressione=math.evaluate(espressione);
+           espressione=parseFloat(espressione.toFixed(11)).toString();
            //espressione=eval(espressione);
         } catch (error) {
             espressione="ERROR";
         }
-        document.getElementById("risultato").textContent=espressione;
+        document.getElementById("risultato").textContent= espressione;
     });
     document.getElementById("cancellazione").addEventListener("click", (event) => {
         espressione="";
