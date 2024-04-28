@@ -38,7 +38,8 @@ window.addEventListener("load", (event) => {
 
     document.getElementById("uguale").addEventListener("click", (event) => {
         try {
-           espressione=eval(espressione);
+           espressione=math.evaluate(espressione);
+           //espressione=eval(espressione);
         } catch (error) {
             espressione="ERROR";
         }
