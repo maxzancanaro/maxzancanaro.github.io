@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test eventi Javascript</title>
+
+    <style>
+      #container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: space-evenly;
+        width: 50vw;
+        height: 50vh;
+        background-color: aqua;
+        margin: auto;
+      }
+
+      .feedback {
+        padding: .5em;
+      }
+
+      #elementoTest {
+        width: 50%;
+        padding: 2em;
+        margin: auto;
+        text-align: center;
+        background-color: blue;
+        color: aqua;
+        border: 1px solid aqua;
+        box-shadow: 1px;
+      }
+
+    </style>
+
+    <script>
+      addEventListener("load",(event)=> {
+
+        document.getElementById("feedbackWindow").textContent=event.type+" target="+event.target;
+
+        document.addEventListener("click",(event)=> {
+          document.getElementById("feedbackDocument").textContent=event.type+" target="+event.target;
+        });
+
+        document.getElementById("elementoTest").addEventListener("click", (event) => {
+          document.getElementById("feedbackElement").textContent=event.type+" target="+event.target;
+        });
+
+        document.getElementById("elementoTest").addEventListener("mouseenter", (event) => {
+          document.getElementById("feedbackElement").textContent=event.type+" target="+event.target;
+        });
+
+        document.getElementById("elementoTest").addEventListener("mouseleave", (event) => {
+          document.getElementById("feedbackElement").textContent=event.type+" target="+event.target;
+        });
+
+      });
+
+      addEventListener("resize",(event)=> {
+        document.getElementById("feedbackWindow").textContent=event.type+" target="+event.target;
+      });
+
+    </script>
+
+</head>
+<body>
+  <div id="container">
+    <div class="feedback">Evento window: <span id="feedbackWindow">??<span></div>
+    <div class="feedback">Evento document: <span id="feedbackDocument">??</span></div>
+    <div class="feedback">Evento elemento: <span id="feedbackElement">??<span></div>
+    <div id="elementoTest">elemento di test</div> 
+  </div>
+</body>
+</html>
+
+
