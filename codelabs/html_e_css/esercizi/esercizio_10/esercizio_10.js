@@ -40,8 +40,8 @@ window.addEventListener("load", (event) => {
     document.getElementById("uguale").addEventListener("click", (event) => {
         try {
            espressione=math.evaluate(espressione);
+            //espressione=eval(espressione);
            espressione=parseFloat(espressione.toFixed(11)).toString();
-           //espressione=eval(espressione);
         } catch (error) {
             espressione="ERROR";
         }
