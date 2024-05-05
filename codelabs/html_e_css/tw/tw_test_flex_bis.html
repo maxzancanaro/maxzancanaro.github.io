@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Esempio avanzato di Flexbox TW</title>
+</head>
+<script>
+
+  const stiliAttivo = ["bg-zinc-700","text-zinc-50","cursor-default"];
+  const stiliInattivo = ["bg-zinc-200","text-zinc-900","cursor-pointer"];
+
+  const flexNoneDesc="flex-none: gli elementi non si stringono né si allargano.";
+  const flex1Desc="flex-1: gli elementi si possono stringere ed allargare, non viene considerata la larghezza iniziale.";
+  const flexInitialDesc="flex-initial: gli elementi si possono stringere (tenendo conto della larghezza iniziale), ma non allargare.";
+  const flexAutoDesc="flex-auto: gli elementi si possono stringere ed allargare e viene considerata la larghezza iniziale. ";
+
+  let currentType=null;
+
+  function aggiornaLarghezze() {
+    let element_container=document.getElementById('flexContainer');
+
+    let widths=[];
+    let minimo=0;
+    let props=[];
+
+    for (let e of element_container.children) {
+      widths.push(e.clientWidth);
+    };
+  
+    minimo=Math.min(...widths);
+    
+    for (let e of element_container.children) {
+      prop=e.clientWidth/minimo;
+      e.textContent=prop.toFixed(1);
+    };
+  };
+
+  function aggiornaConsole(tipoAttivo) { 
+    let console_element=document.getElementById('console');
+
+    for (c of console_element.children) {
+      if ( c.id === tipoAttivo) {
+        for ( s of stiliInattivo) {
+          c.classList.remove(s);
+        }
+        for ( s of stiliAttivo ) {
+          c.classList.add(s)
+        }
+      } else {
+        for ( s of stiliAttivo) {
+          c.classList.remove(s);
+        }
+        for ( s of  stiliInattivo ) {
+          c.classList.add(s)
+        }
+      }
+    }
+    currentType=tipoAttivo;
+  }
+
+  function descrizione() {
+    let elemento=document.getElementById('01');
+    let element_display=document.getElementById('display');
+
+    
+    flextpye=Array.from(elemento.classList).filter(function(e) {
+      return e.startsWith('flex-');
+    });
+  
+    
+    console.log("first child="+element_display.firstElementChild)
+
+    switch (flextpye[0]) {
+      case "flex-none":
+        element_display.firstElementChild.textContent=flexNoneDesc;
+        break;
+      case "flex-1": 
+        element_display.firstElementChild.textContent=flex1Desc;
+        break;
+      case "flex-initial": 
+        element_display.firstElementChild.textContent= flexInitialDesc;
+        break;
+      case "flex-auto": 
+        element_display.firstElementChild.textContent=flexAutoDesc;
+        break; 
+      default: 
+        element_display.firstElementChild.textContent="??";
+    }
+
+  }
+
+  function cambioTipo (event) {
+    let element_container=document.getElementById('flexContainer');
+
+    aggiornaConsole(event.target.id)
+    
+    switch (event.target.id) {
+      case "flexNone":
+        flexType="flex-none";
+        break;
+      case "flex1":
+        flexType="flex-1";
+        break;
+      case "flexInitial":
+        flexType="flex-initial";
+        break;
+      case "flexAuto": 
+      flexType="flex-auto";
+    }
+
+    // applica lo stile flex richiesto
+    for (let e of element_container.children) {
+      for (t of ["flex-none","flex-1","flex-initial","flex-auto"]) {
+        e.classList.remove(t);
+      }
+      e.classList.add(flexType)
+    }
+
+    aggiornaLarghezze();
+    descrizione();
+  }
+
+
+
+  window.addEventListener("load", function () {
+    let element_container=document.getElementById('flexContainer');
+    let console_element=document.getElementById('console');
+    let check_element=document.getElementById('check');
+
+
+    aggiornaLarghezze();
+    aggiornaConsole("flexNone");
+    descrizione();
+
+    for (let c of console_element.children) {
+      c.addEventListener("click", cambioTipo);
+    }
+  
+
+  });
+
+  window.addEventListener("resize", function () {
+    let element=document.getElementById('flexContainer');
+    aggiornaLarghezze();
+  });
+
+
+</script>
+<body>
+
+  <div class="m-auto w-4/5 lg:3/5">
+
+  <div class="my-5 py-4 px-1 text-lg bg-orange-50">Esempio avanzato di flexbox in Tailwind</div>
+
+  <div id="console" class="flex my-5 py-4 px-1 bg-zinc-50">
+    <div id="flexNone" class="grow-0 m-1 p-1">flex-none</div>
+    <div id="flex1" class="grow-0 m-1 p-1">flex-1</div>
+    <div id="flexInitial" class="grow-0 m-1 p-1">flex-initial</div>
+    <div id="flexAuto" class="grow-0 m-1 p-1">flex-auto</div>
+  </div>
+
+  <div id="flexContainer" class="flex gap-1 h-60 bg-zinc-200">
+    <div id="01" class="flex-none w-8 p-1 text-center bg-zinc-50"></div>
+    <div id="02" class="flex-none w-16 p-1 text-center bg-zinc-50"></div>
+    <div id="03" class="flex-none w-32 p-1 text-center bg-zinc-50"></div>
+    <div id="04" class="flex-none w-64 p-1 text-center bg-zinc-50"></div>    
+  </div>
+
+  <div id="display" class="my-5 p-4 bg-orange-50">
+    <div class="text-sm text-orange-900"></div>
+  </div>
+
+  <div class="my-5 bg-orange-50">
+    <a class="underline" target="_blank" href="https://tailwindcss.com/docs/flex">flex</a>
+  </div>
+  
+</body>
+</html>

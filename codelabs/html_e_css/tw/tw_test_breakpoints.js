@@ -7,6 +7,8 @@ function visualizzaRisoluzione () {
     elementHeight.textContent = window.innerHeight;
 }
 
+
+
 window.addEventListener("resize", visualizzaRisoluzione);
 
 window.addEventListener("load", visualizzaRisoluzione);
