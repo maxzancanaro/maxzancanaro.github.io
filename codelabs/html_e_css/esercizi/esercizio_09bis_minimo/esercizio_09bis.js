@@ -37,9 +37,4 @@ window.addEventListener("load", (event) => {
         }
         document.getElementById("risultato").textContent= espressione;
     });
-    document.getElementById("cancellazione").addEventListener("click", (event) => {
-        espressione="";
-        document.getElementById("risultato").textContent=espressione;
-    });
-    
 });
