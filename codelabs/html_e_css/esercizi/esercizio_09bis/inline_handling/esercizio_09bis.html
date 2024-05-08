@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+        <link rel="stylesheet" href="esercizio_09bis-semplice.css">
+    -->
+    <link rel="stylesheet" href="esercizio_09bis.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.2/math.js" ></script>
+    <script src="esercizio_09bis.js"></script>
+
+    <title>Calcolatrice</title>
+
+</head>
+<body>
+
+<div id="contenitore">
+
+    <div id="risultato">&nbsp;</div>
+
+    <div id="contenitoreConsole">
+        <div id="numeri">
+            <div onclick="aggiungi('1')">1</div>
+            <div onclick="aggiungi('2')">2</div>
+            <div onclick="aggiungi('3')">3</div>
+            <div onclick="aggiungi('4')">4</div>
+            <div onclick="aggiungi('5')">5</div>
+            <div onclick="aggiungi('6')">6</div>
+            <div onclick="aggiungi('7')">7</div>
+            <div onclick="aggiungi('8')">8</div>
+            <div onclick="aggiungi('9')">9</div>
+            <div onclick="aggiungi('0')">0</div>
+        </div>
+
+        <div id="operazioni">
+            <div onclick="aggiungi('+')">+</div>
+            <div onclick="aggiungi('-')">-</div>
+            <div onclick="aggiungi('/')">/</div>
+            <div onclick="aggiungi('*')">*</div>
+            <div onclick="cancella()">C</div>
+        </div>
+
+        <div onclick="calcola()" id="uguale">
+            =
+        </div>
+    </div> 
+</div>
+
+</body>
+</html>

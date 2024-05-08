@@ -5,7 +5,7 @@ window.addEventListener("load", (event) => {
     let elementoNumeri=document.getElementById("numeri")
     for (let element of elementoNumeri.children) {
         
-        element.addEventListener("click", (event) => {
+        element.addEventListener("click", function (event) {
             if ( espressione==="ERROR") {
                 espressione="";
             }
