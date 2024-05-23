@@ -2,7 +2,7 @@
 #main {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: stretch;
     align-items: stretch;
     width: 60vw;
     height: 90vh;
