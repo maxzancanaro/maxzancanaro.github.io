@@ -1,7 +1,7 @@
 
 #main {
     display: grid;
-    grid-template-rows: 10% auto 20%;
+    grid-template-rows: 10% auto 15%;
     justify-content: space-evenly;
     align-items: stretch;
     width: 60vw;
@@ -13,7 +13,6 @@
     display: grid;
     flex-direction: row;
     grid-template-columns: auto auto auto;
-    
     justify-content: center;
     justify-items: center;
     align-items: center;
@@ -33,7 +32,6 @@
 }
 
 #consoleIstruzioni {
-    height: 20%;
     padding: 1em;
     font-family: sans-serif;
     font-size: 1.5em;
@@ -53,7 +51,7 @@
 }
 
 #consoleRisultato {
-    height: 20%;
+    
     padding: 1em;
     text-align: center;
     font-family: sans-serif;
