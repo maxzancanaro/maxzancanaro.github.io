@@ -2,7 +2,7 @@
 #main {
     display: grid;
     grid-template-rows: 10% auto 15%;
-    justify-content: space-evenly;
+    justify-content: start;
     align-items: stretch;
     width: 60vw;
     height: 90vh;

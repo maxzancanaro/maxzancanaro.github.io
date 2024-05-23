@@ -15,7 +15,6 @@ function generatoreRandom9 () {
 }
 
 
-
 /* dato un array di numeri, ne estrae uno a caso */
 function estraiNumero (arrayNumeri) {
     let randomIndex = Math.floor(Math.random() * arrayNumeri.length); 
