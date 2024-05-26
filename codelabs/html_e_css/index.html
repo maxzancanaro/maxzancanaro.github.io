@@ -77,7 +77,7 @@
 <p>Oltre allo HTML, che vedremo in seguito, esistono molti altri linguaggi di <em>markup. </em>Ad esempio, SGML (<em>Standard Generalized Markup Language</em>), da cui HTML deriva, è stato definito per creare classi di linguaggi di <em>markup</em>, in particolare per annotare strutture di testi letterari a fini di archiviazione e indicizzazione e come passaggio preliminare per analisi bibliografiche. XML (<em>eXtended Markup Language</em>) è una forma semplificata e più strutturata di SGML usata per annotare strutture di dati e automatizzare i processi di analisi. <a href="https://en.wikipedia.org/wiki/Markdown" target="_blank">Markdown</a> e <a href="https://en.wikipedia.org/wiki/LaTeX" target="_blank">LaTex</a> vengono usati per definire aspetti specifici di formattazione e sono molto usati in ambito editoriale.</p>
 <p>Un linguaggio di <em>markup </em>consiste in una serie di elementi extra-testuali che vengono inseriti nel testo per annotare (o marcare) gli aspetti che si ritengono rilevanti della struttura. La figura 1.1 mostra un esempio di annotazione della struttura di una antologia di poesie. Nell&#39;esempio, si suppone che un&#39;antologia (<em>anthology</em>) sia formata da una a più poesie (<em>poem</em>) ognuna delle quali composte da un numero variabile di stanze a loro volta composte da un numero variabile di linee (<em>line</em>).  </p>
 <table>
-<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\c9a9a28f8acc2c69.png"></p>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\47fc2b23c12b39b7.png"></p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p><em>Figura 1.1 Esempio di testo annotato con SGML (da Sperberg-McQueen &amp; Burnard, 1999; part 1, chapter 2)</em></p>
 </td></tr>
@@ -118,7 +118,7 @@
 <p>Seguendo la sintassi SGML (e anche di XML), i tag di HTML possono avere una struttura interna, oltre a contenere porzioni di testo. </p>
 <p>Un elemento importante della struttura interna è l&#39;uso delle coppie attributo/valore per specificare dei parametri aggiuntivi rispetto al significato del tag. Ad esempio, per inserire un&#39;immagine nel documento si usa il self-closing tag `&lt;img&gt;` ma bisogno, almeno, specificare il nome del file in cui si trova l&#39;immagine: per farlo, si usa l&#39;attributo <em>src </em>(per &#34;source&#34;) indicando come valore il nome del file (si veda la figura 1.2).</p>
 <table>
-<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\f906f7e3ca548157.png"></p>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\481a4d8c85169de7.png"></p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p><em>Figura 2.1  Esempio di attributi e valori per specificare parametri dei tag HTML</em></p>
 </td></tr>
@@ -204,7 +204,7 @@
 <p>Le <em>character entities </em>si usano anche per visualizzare caratteri non standard o caratteri al di fuori del charset utilizzato. L&#39;elenco completo si può trovare ad esempio nella pagina di Wikipedia <a href="https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references" target="_blank">List of XML and HTML character entity references</a>.</p>
 <h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/html_file_to_document.html" target="_blank"><strong>risorse/html_file_to_document.html</strong></a></h3>
 <table>
-<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\bd5db91359aee727.png"></p>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\985a696b5a926a52.png"></p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p><em>Figura 6.1 Dal file HTML al documento HTML (da notare l&#39;uso di character entities)</em></p>
 </td></tr>
@@ -234,7 +234,7 @@
 <p>I <em>tag</em> per annotare e visualizzare i titoli di diverso livello sono <strong>`&lt;h1&gt;`</strong>,<strong> `&lt;h2&gt;`</strong>, e così via fino ad <strong>`&lt;h6&gt;`</strong>. I vari browser determinano per ognuno quale tipo di carattere, formato, grandezza e colore utilizzare (si veda figura 6.1). Queste proprietà sono comunque personalizzabili usando CSS. </p>
 <h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/headings.html" target="_blank"><strong>risorse/headings.html</strong></a></h3>
 <table>
-<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\cf35cca5d864cdad.png"></p>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\e39ccb1725a1f5db.png"></p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p><em>Figura 6.2 Visualizzazione in Chrome dei 6 livelli di titolo (heading) in HTML</em></p>
 </td></tr>
@@ -243,7 +243,7 @@
 <p>Nell&#39;HTML originario, era stata introdotta l&#39;annotazione <strong>`&lt;p&gt;...&lt;/p&gt;` </strong>per denotare porzioni di testo che rappresentano un paragrafo. Il testo all&#39;interno di un paragrafo è rappresentato come una unica linea, indipendentemente da come viene scritto nel file e il browser si occupa di andare a capo quando necessario, dipendentemente dalla larghezza della finestra. Inoltre vengono aggiunte delle spaziature appropriate prima e dopo ogni paragrafo (figura 6.3).</p>
 <h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/headings.html" target="_blank"><strong>risorse/paragrafi.html</strong></a></h3>
 <table>
-<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 592.42px" src="img\\4db13fe495ba0ce6.png"></p>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 592.42px" src="img\\1b3cea86b3541a95.png"></p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p><em>Figura 6.3 Gestione automatica dei paragrafi (tag `&lt;p&gt;...&lt;/p&gt;` in HTML</em></p>
 </td></tr>
@@ -251,7 +251,7 @@
 <p>Benché ancora molto usato per annotare documenti, il tag `&lt;p&gt;` è poco versatile perché impone una formattazione difficile poi da gestire in modo personalizzato (come vedremo più avanti). Nelle nuove versioni di HTML, è stata introdotta l&#39;annotazione <strong>`&lt;div&gt;...&lt;/div&gt;`</strong> per rappresentare generici blocchi all&#39;interno di un documento. La rappresentazione visuale standard delle porzioni `&lt;div&gt;` è simile a quella per `&lt;p&gt;&#39; con la differenza che i blocchi di testo non vengono tra loro separati (si veda figura 6.4). Nell&#39;usare il <em>tag </em>‘&lt;div&gt;&#39; si potrà poi gestire la spaziatura, l&#39;indentazione o altre proprietà di impaginazione usando CSS.</p>
 <h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/blocchi_vs_paragrafi.html" target="_blank"><strong>risorse/blocchi _vs_ paragrafi.html</strong></a></h3>
 <table>
-<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\3c5daffa93fe3644.png"></p>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\47cc89c9199f7a41.png"></p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p><em>Figura 6.4 Differenza tra il tag `&lt;p&gt;` e il tag `&lt;div&gt;`</em></p>
 </td></tr>
@@ -272,7 +272,7 @@
 <p>La destinazione del collegamento viene specificata con l&#39;attributo <strong><em>href</em></strong>.  Se il valore di questo attributo è un nome di un file, questo viene aperto, se invece è un URL viene caricato via internet. Per fare un collegamento interno, viene invece indicato un codice identificativo prefisso dal carattere #. Lo stesso codice deve essere poi indicato in un <em>tag </em>dello stesso documento usando l&#39;attributo <em>id</em>: quando si clicca su l&#39;ancora, la visualizzazione del documento scorre fino a rendere visibile il<em> tag</em> a cui è stato assegnato l&#39;<em>id.</em></p>
 <h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/hypertext_01.html" target="_blank"><strong>risorse/hypertext_01.html</strong></a> <a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/hypertext_02.html" target="_blank"><strong>risorse/hypertext_02.html</strong></a></h3>
 <table>
-<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\f6bf1036646e8157.png"></p>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\434df658b8b8392e.png"></p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p><em>Figura 6.2 Uso di collegamenti ipertestuali esterni ed interni con il tag `&lt;a&gt;` </em></p>
 </td></tr>
@@ -328,7 +328,7 @@
 <p>Un punto di attenzione è che le tabelle non hanno bordo ma lo si può aggiungere con l&#39;attributo <strong><em>border </em></strong>del <em>tag</em> `&lt;table&gt;`. Anche in questo caso, personalizzazioni più efficaci sono possibili con l&#39;uso di CSS, come vedremo più avanti.</p>
 <h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/many_lists.html" target="_blank"><strong>risorse/many_lists.html</strong></a> </h3>
 <table>
-<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\bc4bf792b8108efd.png"></p>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\e7f66843cbd686ed.png"></p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p><em>Figura 8.2 Esempio di una tabella con uso di rowspan </em>e <em>colspan</em></p>
 </td></tr>
@@ -371,7 +371,7 @@
 &lt;/map&gt;                </code></pre>
 <p><em>Figura 9.1 Esempio di mappa interattiva costruita sul un&#39;immagine</em></p>
 <table>
-<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\48436e3da2f8f21c.png"></p>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\674331477d466b94.png"></p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p><em>Figura 9.2 L&#39;immagine della mappa usata nell&#39;esempio di figura 9.1 e i punti (non visibili nella pagina web) usati per tracciare il contorno dell&#39;area della mappa da usare come anchor. </em></p>
 </td></tr>
@@ -560,8 +560,6 @@ a[target=&#34;_blank&#34;] {
 <li><em>white-space: </em>specifica se andare a capo <em>normal </em>o no <em>nowarp </em>(ci sono altre opzioni più complesse che qui non vediamo)</li>
 </ul>
 <p>Si veda un esempio qui: <a href="https://jsfiddle.net/massimo_zancanaro/y3o7esu0/latest/" target="_blank">https://jsfiddle.net/massimo_zancanaro/y3o7esu0/latest/</a> </p>
-<h2 is-upgraded><strong>Proprietà di liste e tabelle</strong></h2>
-<p><strong>[DA COMPLETARE]</strong></p>
 
 
       </google-codelab-step>
@@ -631,7 +629,108 @@ a[target=&#34;_blank&#34;] {
       </google-codelab-step>
     
       <google-codelab-step label="Introduzione al DOM e all&#39;uso di Javascript" duration="0">
-        <p><strong>[DA COMPLETARE]</strong></p>
+        <p>I documenti HTML possono essere resi &#34;dinamici&#34; con l&#39;uso di Javascript. Si possono cioè aggiungere, togliere e nascondere tag o contenuto testuale e anche modificare gli stili CSS dopo che un documento HTML è stato visualizzato e in base ad azioni (click, movimenti del mouse, ecc.) compiuti dall&#39;utente. </p>
+<p>Per poter agire su uno specifico documento HTML, il codice Javascript deve essere inserito nel documento usando il tag <strong>`&lt;script&gt;`</strong>. Questo tag può contenere all&#39;interno il codice HTML o avere un riferimento ad un file esterno e può essere messo in qualunque posizione all&#39;interno del documento. Il codice Javascript viene eseguito appena viene caricato. </p>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\408bc326af4e040e.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 14.1. Due modi di associare codice Javascript ad HTML (nota: il tag `&lt;script&gt;` può essere messo anche nella sezione body ma è buona norma inserirlo sempre nella sezione head)</em></p>
+</td></tr>
+</table>
+<aside class="special"><p><strong>Nota: </strong>per una gestione più chiara ed ordinata e per una maggiore robustezza (come si vedrà più avanti) è una buona pratica mettere il tag `&lt;script&gt;` sempre e solo all&#39;interno della sezione <em>head</em> e usare preferibilmente un file Javascript esterno. </p>
+</aside>
+<h2 is-upgraded>L&#39;oggetto window e il Document Object Model</h2>
+<p>Quando uno script viene eseguito all&#39;interno di un browser, ha accesso ad alcuni oggetti utili per interagire con la finestra del browser e con il documento HTML. L&#39;oggetto principale è <strong>window </strong>che rappresentare il dominio globale (e si può anche non scrivere: ogni variabile e metodo senza una ulteriore specificazione farà riferimento al contesto di <strong>window</strong>)<em>. </em></p>
+<p>Le principali proprietà dell&#39;oggetto <strong>window</strong> sono:</p>
+<ul>
+<li><strong>location</strong>: l&#39;URL della pagina visualizzata;</li>
+<li><strong>innerWidth </strong>e <strong>innerHeight</strong>: la larghezza e l&#39;altezza in pixel della finestra di visualizzazione del browser;</li>
+<li><strong>console</strong>: un oggetto che permette di accedere alla console del browser;</li>
+</ul>
+<p>Quando il browser carica un file HTML per visualizzare una pagina web, costruisce una struttura che di chiama <strong>DOM </strong>per <em>Document Object Model</em>. Si tratta di una struttura dati ad albero (si veda la voce di <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)" target="_blank">Wikipedia Tree Data Structure</a>) in cui ogni nodo contiene un elemento del documento HTML. La struttura dati ha diversi metodi e proprietà per cercare e modificare gli elementi. Il DOM è un oggetto che si chiama <strong>document </strong>ed è accessibile come proprietà dell&#39;oggetto <strong>window </strong>una volta che la pagina è stata caricata. </p>
+<p>I metodi principali dell&#39;oggetto <strong>document </strong>sono quelli che permettono di accedere agli elementi del DOM:</p>
+<ul>
+<li><strong>getElementById()</strong>: che restituisce l&#39;elemento dell&#39;HTML con un dato identificativo;</li>
+<li><strong>getElementsByClass()</strong>: che restituisce gli elementi dell&#39;HTML che hanno una data classe (passata come parametro al metodo);</li>
+<li><strong>getElementsByTagName(): </strong>restituisce l&#39;elenco di elementi (se esistono) che hanno come tag l&#39;argomento passato come parametro;</li>
+</ul>
+<p>Il metodo <strong>getElementById() </strong>restituisce un oggetto di tipo <strong>HTMLElement </strong>che è associato all&#39;elemento dell&#39;HTML visualizzato nel browser e, se modificato, i cambiamenti vengono sincronizzati con la visualizzazione del documento. Le proprietà principali di <strong>HTMLElement </strong>sono:</p>
+<ul>
+<li><strong>textContent</strong>: la parte testuale dell&#39;elemento;</li>
+<li><strong>innerHTML</strong>: il contenuto del l&#39;elemento come stringa HTML;</li>
+<li><strong>outerHTML</strong>: l&#39;intero elemento come stringa HTML;</li>
+<li><strong>tagName</strong>: il nome del tag HTML;</li>
+<li><strong>id</strong>: l&#39;identificativo (se specificato nell&#39;HTML) dell&#39;elemento;</li>
+<li><strong>className</strong>: il nome della classe (se specificata nell&#39;HTML);</li>
+<li><strong>parent</strong>: l&#39;elemento parent dell&#39;elemento corrente;</li>
+<li><strong>children</strong>: l&#39;elenco degli elementi children.</li>
+<li><strong>style</strong>: gli inline style dell&#39;elemento come coppie attributo valore: il nome degli attributi di CSS che contengono il carattere ‘-&#39; vanno trasformati in camel case (ad esempio, background-color diventa backgroundColor);</li>
+</ul>
+<p>L&#39;esempio di Figura 14.2 illustra come da Javascript si può cambiare il documento visualizzato modificando il valore della proprietà <strong>textContent</strong> di un elemento.</p>
+<h3 is-upgraded><a href="https://jsfiddle.net/massimo_zancanaro/ujyz8nmq/latest" target="_blank"><strong>https://jsfiddle.net/massimo_zancanaro/ujyz8nmq/latest</strong></a></h3>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\fb6a199f345d6961.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 14.2. L&#39;esempio di manipolazione del DOM in Javascript per cambiare la visualizzazione di un documento HTML: in questo caso, il testo &#34;??&#34; viene sostituito dal numero &#34;10&#34;.</em></p>
+</td></tr>
+</table>
+<p>Per i metodi o le proprietà in cui viene restituito un elenco (ad esempio <strong>getElementsByClass </strong>o <strong>children</strong>), è importante notare che non si tratta di normali Array Javascript ma di una struttura diversa a cui è comunque possibile accedere usando gli indici e le parentesi quadrate oppure l&#39;operatore <strong>of </strong>in un ciclo (ma non il metodo <strong>forEach</strong>).</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Javascript listener" duration="0">
+        <p>Rispondere in modo dinamico alle azioni dell&#39;utente quali click, movimenti di mouse ecc. significa cambiare in modo dinamico la struttura del DOM usando i metodi visti nella sezione precedente. È necessario però capire in che modo il programma Javascript può &#34;sapere&#34; quando l&#39;utente ha fatto una certa azione (e dove, cioè su qualche elemento del DOM). </p>
+<p>Per fare ciò, si utilizza un approccio chiamato <em>event-driven </em>che consiste nello scrivere delle funzioni dette <strong>listener </strong>per rispondere a degli eventi predefiniti. Gli eventi principali che i browser moderni mettono a disposizione sono i seguenti:</p>
+<ul>
+<li><strong>click</strong>: l&#39;utente clicca con il mouse su un elemento;</li>
+<li><strong>dblclick</strong>: l&#39;utente fa un doppio click su un elemento;</li>
+<li><strong>mousedown</strong>: il tasto del mouse viene premuto;</li>
+<li><strong>mouseup</strong>: il tasto del mouse viene rilasciato (dopo essere stato premuto);</li>
+<li><strong>mouseenter</strong>: il cursore entra nell&#39;area di un un elemento;</li>
+<li><strong>mouseleave</strong>:  il cursore esce dall&#39;area di un elemento;</li>
+<li><strong>mousemove</strong>: il cursore si muove; </li>
+</ul>
+<p>Gli eventi elencati sopra pertengono al DOM e ai suoi elementi: vengono cioè collegati, come vedremo più avanti, a specifici elementi dell&#39;HTML. Altri eventi rilevanti sono però quelli che pertengono all&#39;oggetto windows, in particolare:</p>
+<ul>
+<li><strong>load: </strong>viene attivato quando il browser ha finito di caricare l&#39;HTML e lo ha visualizzato (e quindi l&#39;oggetto <strong>document </strong>che contiene il DOM esiste ed è riferibile);</li>
+<li><strong>resize</strong>: viene attivato quanto la finestra cambia dimensioni.</li>
+</ul>
+<h2 is-upgraded><strong>Inline event handler</strong></h2>
+<p>Il metodo più semplice per gestire gli eventi è di definire associare un <strong>inline handler</strong>, cioè una funzione Javascript allo specifico tag HTML nel documento usando un attributo che ha lo stesso nome dell&#39;evento con <strong>on </strong>premesso (onclick, ondblclick, ...). </p>
+<p>La figura 14.3 illustra un esempio in cui la funzione <em>cliccato() </em>definita nella parte Javascript viene collegata ad un tag `&lt;a&gt;`. In questo modo, quando l&#39;utente clicca sull&#39;ancòra specificata, la funzione viene automaticamente chiamata. Da notare l&#39;uso del tag `&lt;a&gt;` con l&#39;attributo <em>href </em>uguale alla stringa &#34;#&#34;: è uno stratagemma per avere il cursore in modalità puntatore senza avere un vero link. Lo stesso effetto si può comunque ottenere da CSS per ogni tipo di tag con la direttiva <strong>cursor: pointer</strong>.</p>
+<h3 is-upgraded><a href="https://jsfiddle.net/massimo_zancanaro/chtzf4oj/latest/" target="_blank"><strong>https://jsfiddle.net/massimo_zancanaro/chtzf4oj/latest/</strong></a> </h3>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 467.74px" src="img\\ca4f1d17b7d09fac.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 14.3. Esempio di inline handler per l&#39;evento click associato ad un tag `&lt;a&gt;`.</em></p>
+</td></tr>
+</table>
+<p>L&#39;uso degli <em>inline handler </em>è fortemente sconsigliato nella programmazione moderna perché rende il codice difficile da leggere e mescola aspetti di struttura con aspetti di controllo (violando quindi il principio di &#34;separation of concerns&#34;). Inoltre, si può definire solo una funzione per ogni evento per ogni elemento e non si possono gestire gli eventi dell&#39;oggetto window. Infine, introduce fattori di rischio ed è inefficiente.</p>
+<h2 is-upgraded><strong>Event listener come proprietà di document (e window)</strong></h2>
+<p>Il metodo migliore per gestire gli eventi è di associare la funzione di risposta ad un evento all&#39;elemento del DOM (o all&#39;oggetto window) usando il metodo <strong>addEventListener</strong> dell&#39;oggetto (che può essere <strong>window</strong>, <strong>document </strong>oppure un <strong>HTMLElement</strong>). La figura 14.4 mostra l&#39;esempio precedente realizzato con questo approccio: l&#39;elemento da cliccare viene prima identificato nel DOM (in questo caso usando l&#39;id &#34;daCliccare&#34; che deve essere specificato nell&#39;HTML) e poi gli viene aggiunta la funzione listener.</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 479.50px" src="img\\824169a69870e3a8.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 14.4.  Funzione listener associata all&#39;elemento HTML tramite il metodo addEvent Listener (si veda figura 14.5 per l&#39;esempio completo)</em></p>
+</td></tr>
+</table>
+<p>Perché questo approccio funzioni però, è necessario che l&#39;istruzione Javascript <strong>document.getElementByID </strong>venga eseguita solo dopo che il DOM è stato caricato: altrimenti, <strong>document </strong>ha il valore <em>undefined </em>e l&#39;istruzione darà errore.</p>
+<p>Per avere la certezza che l&#39;oggetto <strong>document </strong>esista nel contesto di Javascript, si devono mettere tutte le istruzioni che lo utilizzano all&#39;interno del listener dell&#39;evento <strong>load </strong>dell&#39;oggetto <strong>window</strong>. La figura 14.5 illustra l&#39;esempio completo.</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\efefbca66479897e.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 14.5.  Funzione listener associata all&#39;elemento HTML tramite il metodo addEvent Listener inserita nel listener dell&#39;evento load.</em></p>
+</td></tr>
+</table>
+<p>Un modo più elegante di associare i listener è l&#39;uso delle <em>arrow function </em>di Javascript che permettono tra l&#39;altro un uso più efficace delle variabili in quanto sono all&#39;interno dello stesso <em>scope</em>. La figura 14.6 illustra l&#39;esempio realizzato con le <em>arrow function.</em></p>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\3bbbdfc10b152c4a.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 14.6.  Esempio realizzato con le arrow function.</em></p>
+</td></tr>
+</table>
+<p>Ci sono altre due strategie più semplici ma non sempre efficaci per assicurarsi che il DOM sia stato caricato e quindi omettere di gestire il documento all&#39;interno del listener di load: (a) si può mettere lo script in fondo alla sezione body, e (b) si può usare la keyword <strong>defer</strong> come attributo del tag script per caricare lo script dopo il DOM. Il possibile problema con il primo approccio è che si assume che il documento venga caricato nell&#39;ordine mentre è possibile che per aumentare l&#39;efficienza, un browser possa dividere il caricamento in processi paralleli e asincroni. Il problema con il secondo approccio è che non tutti i browser riconoscono la keyword defer. In ogni caso, l&#39;uso esteso dei listener e delle <em>arrow function </em>permette di fare pratica con l&#39;approccio moderno alla programmazione.</p>
 
 
       </google-codelab-step>
@@ -651,6 +750,7 @@ a[target=&#34;_blank&#34;] {
 <p>W3School HTML Reference <a href="https://www.w3schools.com/tags/" target="_blank">https://www.w3schools.com/tags/</a> (disponibile a Marzo 2024)</p>
 <p>The Valley of Code <a href="https://thevalleyofcode.com/" target="_blank">https://thevalleyofcode.com/</a> (disponibile a Marzo 2024)</p>
 <p>Wikipedia <a href="https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references" target="_blank">List of XML and HTML character entity references</a> (disponibile a Marzo 2024)</p>
+<p>Wikipedia <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)" target="_blank">Tree Data Structure</a> (disponibile a Marzo 2024)</p>
 
 
       </google-codelab-step>
