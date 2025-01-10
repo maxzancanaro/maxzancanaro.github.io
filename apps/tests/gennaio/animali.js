@@ -11,12 +11,18 @@ let animaliEimmagini=[
 {nome: "Orso", immagine: "orso.png"},
 {nome: "Aquila", immagine: "aquila.png"},
 {nome: "Cervo", immagine: "cervo.png"},
-{nome: "Polpo", immagine: "polpo.png"}
+{nome: "Polpo", immagine: "polpo.png"},
+{nome: "Gallina", immagine: ""}
 ]
 
 function URLImmagine(obj){
     let immagineAnimale = obj.immagine;
-    let url = url_base + immagineAnimale;
+    let url = '';
+    
+    
+    if (immagineAnimale != '' ) {
+        url = url_base + immagineAnimale;
+    } 
     return(url)
 }
 
@@ -28,6 +34,8 @@ function cercaImmagineSafe(arrayObjs, nome){
             url = URLImmagine(obj);
         }
     }
+
+    console.log("URL lenght="+url.length) 
 
     if (url === '') {
         url = url_base + 'sconosciuto.png'
